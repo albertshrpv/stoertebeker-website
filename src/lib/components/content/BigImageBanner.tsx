@@ -2,6 +2,7 @@ import React from 'react';
 import { Markup } from "react-render-markup";
 import ActionButton from '../buttons/ActionButton';
 import type { ComponentSettings } from '../../interfaces/page';
+import { STRAPI_URL } from '../../../environment';
 
 interface Props {
     data: {
@@ -25,7 +26,7 @@ const BigImageBanner: React.FC<Props> = ({ data }) => {
     const url = image?.url ? image?.url : image;
 
     const backgroundStyle = {
-        backgroundImage: `url(${import.meta.env.STRAPI_URL + url + '?format=webp&embed'})`,
+        backgroundImage: `url(${STRAPI_URL + url + '?format=webp&embed'})`,
     };
 
     let heightClass = '';

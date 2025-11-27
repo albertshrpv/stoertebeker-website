@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Markup } from "react-render-markup";
 import type { Block } from '../../../interfaces/page';
+import { STRAPI_URL } from '../../../../environment';
 
 interface Props {
     block: Block;
@@ -29,7 +30,7 @@ const SimpleFeatureSectionEntry: React.FC<Props> = ({ block, cid, __component, s
                     {image &&
                         <img
                             className={`absolute top-0 left-0 w-full h-full object-cover overflow-hidden rounded-t-2xl group-hover:scale-105 transition-all duration-300 ease-in-out`}
-                            srcSet={import.meta.env.STRAPI_URL + image.url + '?format=webp&w=300&embed&quality=30 320w, ' + import.meta.env.STRAPI_URL + image.url + '?format=webp&w=800&embed&quality=50 600w, ' + import.meta.env.STRAPI_URL + image.url + '?format=webp&w=800&embed&quality=60 900w, ' + import.meta.env.STRAPI_URL + image.url + '?format=webp&w=1400&embed&quality=60 1200w'}
+                            srcSet={STRAPI_URL + image.url + '?format=webp&w=300&embed&quality=30 320w, ' + STRAPI_URL + image.url + '?format=webp&w=800&embed&quality=50 600w, ' + STRAPI_URL + image.url + '?format=webp&w=800&embed&quality=60 900w, ' + STRAPI_URL + image.url + '?format=webp&w=1400&embed&quality=60 1200w'}
                             sizes="(max-width: 600px) 100vw, (max-width: 900px) 100vw, (max-width: 1200px) 50vw, 40vw"
                             alt={image.alternativeText}
                         />
@@ -52,7 +53,7 @@ const SimpleFeatureSectionEntry: React.FC<Props> = ({ block, cid, __component, s
             {image &&
                 <img
                     className={`absolute top-0 left-0 w-full h-full object-cover overflow-hidden rounded-2xl`}
-                    srcSet={import.meta.env.STRAPI_URL + image.url + '?format=webp&w=300&embed&quality=30 320w, ' + import.meta.env.STRAPI_URL + image.url + '?format=webp&w=800&embed&quality=50 600w, ' + import.meta.env.STRAPI_URL + image.url + '?format=webp&w=800&embed&quality=60 900w, ' + import.meta.env.STRAPI_URL + image.url + '?format=webp&w=1400&embed&quality=60 1200w'}
+                    srcSet={STRAPI_URL + image.url + '?format=webp&w=300&embed&quality=30 320w, ' + STRAPI_URL + image.url + '?format=webp&w=800&embed&quality=50 600w, ' + STRAPI_URL + image.url + '?format=webp&w=800&embed&quality=60 900w, ' + STRAPI_URL + image.url + '?format=webp&w=1400&embed&quality=60 1200w'}
                     sizes="(max-width: 600px) 100vw, (max-width: 900px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     alt={image.alternativeText}
                 />

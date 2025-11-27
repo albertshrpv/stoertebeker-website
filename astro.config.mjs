@@ -16,7 +16,6 @@ export default defineConfig({
   site: 'https:/booking.stoertebeker.de',
   trailingSlash: 'ignore',
   redirects: {
-    '/': '/de/shop',
   },
   integrations: [tailwind(), react(), sitemap(), devBarIntegration(), devOnlyRoutes(),],
   vite: {

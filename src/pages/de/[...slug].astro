@@ -9,6 +9,7 @@ import type { NavigationItem } from "../../lib/interfaces/navigation";
 import { componentContentPadding } from "../../lib/utils";
 import { Markup } from "react-render-markup";
 import ActionButton from "../../lib/components/buttons/ActionButton";
+import { STRAPI_URL } from '../../environment';
 
 export async function getStaticPaths() {
   let endpoint = "pages?populate=*&filters[slug][$ne]=index&locale=de";
@@ -146,7 +147,7 @@ const title = page.pageTitle ?? page.title;
         <div class={`page-hero h-[40vh] lg:h-[47vh] xl:h-[70vh] 2xl:h-[66vh] flex justify-start items-center`}>
           <div
             style={{
-              backgroundImage: `url(${import.meta.env.STRAPI_URL + page.image.url + "?format=webp&embed"})`,
+              backgroundImage: `url(${STRAPI_URL + page.image.url + "?format=webp&embed"})`,
             }}
             class={`backgroundImage`}
           />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Markup } from "react-render-markup";
 import type { Block, ComponentSettings } from '../../interfaces/page';
 import { placeholderUrl } from '../../utils';
+import { STRAPI_URL } from '../../../environment';
 
 interface Props {
     data: {
@@ -29,8 +30,8 @@ const FeatureListImage: React.FC<Props> = ({ data, padding }) => {
                     <img
                         className="absolute inset-0 w-full h-full object-cover rounded-2xl"
                         width="800" height="533"
-                        src={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'}
-                        srcSet={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=300&embed&quality=30 320w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=50 600w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=60 900w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed&quality=60 1200w'}
+                        src={STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'}
+                        srcSet={STRAPI_URL + imgUrl + '?format=webp&w=300&embed&quality=30 320w, ' + STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=50 600w, ' + STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=60 900w, ' + STRAPI_URL + imgUrl + '?format=webp&w=1400&embed&quality=60 1200w'}
                         sizes="(max-width: 600px) 100vw, (max-width: 900px) 100vw, (max-width: 1200px) 50vw, 40vw"
                         alt={imgAlt}
                         loading="lazy"
@@ -64,8 +65,8 @@ const FeatureListImage: React.FC<Props> = ({ data, padding }) => {
                 <img
                     className="w-full"
                     width="800" height="533"
-                    src={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'}
-                    srcSet={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=300&embed&quality=30 320w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=50 600w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=60 900w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed&quality=60 1200w'}
+                    src={STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'}
+                    srcSet={STRAPI_URL + imgUrl + '?format=webp&w=300&embed&quality=30 320w, ' + STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=50 600w, ' + STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=60 900w, ' + STRAPI_URL + imgUrl + '?format=webp&w=1400&embed&quality=60 1200w'}
                     sizes="(max-width: 600px) 100vw, (max-width: 900px) 100vw, (max-width: 1200px) 50vw, 40vw"
                     alt={imgAlt}
                     loading="lazy"

@@ -4,6 +4,7 @@ import type { Block, ComponentSettings } from '../../interfaces/page';
 import ActionButton from '../buttons/ActionButton';
 import type { CTA } from '../../interfaces/cta';
 import { componentContentPadding } from '../../utils';
+import { STRAPI_URL } from '../../../environment';
 
 interface Props {
     data: {
@@ -31,18 +32,18 @@ const ContentBanner: React.FC<Props> = ({ data, padding }) => {
                     className="w-full h-full object-cover"
                     width="800"
                     height="533"
-                    src={import.meta.env.STRAPI_URL + image.url + "?format=webp&w=1400&embed"}
+                        src={STRAPI_URL + image.url + "?format=webp&w=1400&embed"}
                     srcSet={
-                        import.meta.env.STRAPI_URL +
+                        STRAPI_URL +
                         image.url +
                         "?format=webp&w=300&embed&quality=30 320w, " +
-                        import.meta.env.STRAPI_URL +
+                        STRAPI_URL +
                         image.url +
                         "?format=webp&w=800&embed&quality=50 600w, " +
-                        import.meta.env.STRAPI_URL +
+                        STRAPI_URL +
                         image.url +
                         "?format=webp&w=800&embed&quality=60 900w, " +
-                        import.meta.env.STRAPI_URL +
+                        STRAPI_URL +
                         image.url +
                         "?format=webp&w=1400&embed&quality=60 1200w"
                     }
@@ -57,18 +58,18 @@ const ContentBanner: React.FC<Props> = ({ data, padding }) => {
                         className="absolute inset-0 w-full h-full object-cover rounded-2xl"
                         width="800"
                         height="533"
-                        src={import.meta.env.STRAPI_URL + image.url + "?format=webp&w=1400&embed"}
+                        src={STRAPI_URL + image.url + "?format=webp&w=1400&embed"}
                         srcSet={
-                            import.meta.env.STRAPI_URL +
+                            STRAPI_URL +
                             image.url +
                             "?format=webp&w=300&embed&quality=30 320w, " +
-                            import.meta.env.STRAPI_URL +
+                            STRAPI_URL +
                             image.url +
                             "?format=webp&w=800&embed&quality=50 600w, " +
-                            import.meta.env.STRAPI_URL +
+                            STRAPI_URL +
                             image.url +
                             "?format=webp&w=800&embed&quality=60 900w, " +
-                            import.meta.env.STRAPI_URL +
+                            STRAPI_URL +
                             image.url +
                             "?format=webp&w=1400&embed&quality=60 1200w"
                         }

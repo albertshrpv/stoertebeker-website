@@ -6,6 +6,7 @@ import Footer from "../components/base/Footer.astro";
 import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
 import { PageType } from "../lib/interfaces/page";
 import ScrollToTopBtn from "../components/base/ScrollToTopBtn.astro";
+import NavIndex from "../components/base/NavIndex.astro";
 
 export interface LangSwitch {
   locale: string;
@@ -270,7 +271,9 @@ const isDev = import.meta.env.DEV;
     </script>
   </head>
   <body>
-    <Nav locale={locale} />
+    {
+      slug === "index" ? <NavIndex locale={locale} /> : <Nav locale={locale} />
+    }
     <slot />
     <ScrollToTopBtn />
     <Footer locale={locale} />

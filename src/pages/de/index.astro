@@ -1,0 +1,33 @@
+---
+import { PageType, type Page } from "../../lib/interfaces/page.ts";
+import { buildComponent, isDynamicComponent } from "../../lib/components_builder.tsx";
+import DynamicComponentWrapper from "../../lib/dynamic_component_wrapper.astro";
+import SearchIndex from "../../lib/search_index_builder";
+import Layout from "../../layouts/Layout.astro";
+import fetchApi from "../../../lib/strapi";
+
+const page = (
+    await fetchApi<Page[]>({
+        endpoint:
+            "pages?populate[0]=blocks&populate[1]=blocks.blocks&populate[2]=blocks.image&populate[3]=blocks.blocks.image&populate[4]=blocks.blocks.blocks&populate[5]=blocks.blocks2&populate[6]=blocks.blocks.blocks2&populate[10]=blocks.componentSettings&populate[11]=blocks.blocks2&populate[12]=blocks.blocks3&populate[13]=blocks.blocks4&populate[14]=blocks.blocks2.image&populate[15]=blocks.blocks3.image&populate[16]=blocks.blocks4.image&populate[30]=blocks.cta&populate[31]=blocks.blocks.cta&filters[slug][$eq]=index&locale=de", // the content type to fetch
+        wrappedByKey: "data", // the key to unwrap the response
+    })
+)[0];
+
+const metatitle = page.metatitle ? page.metatitle : page.title;
+const metadescription = page.metadescription ? page.metadescription : "";
+
+if (import.meta.env.PROD) {
+    // add search index of this page
+    SearchIndex.addFromPage(page, "Startseite", "/");
+    SearchIndex.saveToFile();
+}
+---
+
+<Layout title={metatitle} description={metadescription} slug="index" pageType={PageType.page} locale="de" langSwitch={[]}>
+    {
+        page.blocks.map((b) =>
+            isDynamicComponent(b) ? <DynamicComponentWrapper block={b} locale="de" /> : <Fragment set:html={buildComponent(b)} key={b.documentId} />,
+        )
+    }
+</Layout>

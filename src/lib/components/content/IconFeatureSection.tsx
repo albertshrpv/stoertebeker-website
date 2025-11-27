@@ -3,7 +3,8 @@ import { buildComponent } from '../../components_builder';
 import type { Block, ComponentSettings } from '../../interfaces/page';
 import { Markup } from "react-render-markup";
 import SimpleFeatureSectionEntry from './sub/SimpleFeatureSectionEntry';
-
+import { STRAPI_URL } from '../../../environment';
+    
 interface Props {
     data: {
         blocks: Block[];
@@ -26,7 +27,7 @@ const IconFeatureSection: React.FC<Props> = ({ data, padding }) => {
                             <div className='bg-primary-500 w-12 h-12 rounded-md p-3 flex items-center justify-center mb-4'>
                                 <img
                                     className={`w-full h-full object-contain`}
-                                    src={import.meta.env.STRAPI_URL + block.image.url}
+                                    src={STRAPI_URL + block.image.url}
                                     alt={block.image.alternativeText}
                                 />
                             </div>

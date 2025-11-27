@@ -2,6 +2,7 @@ import React from 'react';
 import { Markup } from "react-render-markup";
 import type { Block, ComponentSettings } from '../../interfaces/page';
 import ActionButton from '../buttons/ActionButton';
+import { STRAPI_URL } from '../../../environment';
 
 interface Props {
     data: {
@@ -33,8 +34,8 @@ const StatSection: React.FC<Props> = ({ data }) => {
                     <img
                         className="w-full h-full object-cover"
                         width="800" height="533"
-                        src={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'}
-                        srcSet={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=300&embed&quality=30 320w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=50 600w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=60 900w, ' + import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed&quality=60 1200w'}
+                        src={STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'}
+                        srcSet={STRAPI_URL + imgUrl + '?format=webp&w=300&embed&quality=30 320w, ' + STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=50 600w, ' + STRAPI_URL + imgUrl + '?format=webp&w=800&embed&quality=60 900w, ' + STRAPI_URL + imgUrl + '?format=webp&w=1400&embed&quality=60 1200w'}
                         sizes="(max-width: 600px) 40vw, (max-width: 900px) 60vw, (max-width: 1200px) 50vw, 40vw"
                         alt={imgAlt}
                         loading="lazy"

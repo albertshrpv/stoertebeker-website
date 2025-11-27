@@ -3,6 +3,7 @@ import { Markup } from "react-render-markup";
 import type { ComponentSettings } from '../../interfaces/page';
 import ActionButton from '../buttons/ActionButton';
 import { placeholderUrl } from '../../utils';
+import { STRAPI_URL } from '../../../environment';
 
 interface Props {
     data: {
@@ -52,7 +53,7 @@ const ImageTextOverlay: React.FC<Props> = ({ data, padding }) => {
                 <div className={`max-w-screen-2xl text-start w-full ${padding} lg:mb-48`}>
                     <div className="lg:flex lg:justify-center relative">
                         <div className='relative group w-full overflow-hidden'>
-                            <img style={heightContraintStyle} className="w-full overflow-clip object-cover z-10" src={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'} alt={imgAlt} />
+                            <img style={heightContraintStyle} className="w-full overflow-clip object-cover z-10" src={STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'} alt={imgAlt} />
                             {
                                 caption &&
                                 <div className={`absolute z-30 content-center h-0 transition-all ${textBoxPosition === "right" ? 'ps-10 text-left' : 'pe-12 text-right'} duration-300 group-hover:h-8 items-center bottom-0 text-neutral-50 text-xs w-full`}>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { placeholderUrl } from '../../utils';
+import { STRAPI_URL } from '../../../environment';
 
 interface Props {
     data: {
@@ -17,7 +18,7 @@ const BigImageHeader: React.FC<Props> = ({ data }) => {
 
 
     const backgroundStyle = {
-        backgroundImage: `url(${import.meta.env.STRAPI_URL + url + '?format=webp&embed'})`,
+        backgroundImage: `url(${STRAPI_URL + url + '?format=webp&embed'})`,
     };
 
     return (

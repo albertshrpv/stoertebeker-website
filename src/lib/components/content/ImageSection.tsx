@@ -3,6 +3,7 @@ import { Markup } from "react-render-markup";
 import type { ComponentSettings } from '../../interfaces/page';
 import ActionButton from '../buttons/ActionButton';
 import { placeholderUrl } from '../../utils';
+import { STRAPI_URL } from '../../../environment';
 
 interface Props {
     data: {
@@ -46,7 +47,7 @@ const ImageSection: React.FC<Props> = ({ data, padding }) => {
                         const imgUrl = image?.url ?? placeholderUrl;
                         const imgAlt = image?.alternativeText ?? "Placeholder";
                         return (
-                            <img key={idx} className="image-viewer w-full h-full overflow-clip object-cover rounded-2xl" src={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'} alt={imgAlt} />
+                            <img key={idx} className="image-viewer w-full h-full overflow-clip object-cover rounded-2xl" src={STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'} alt={imgAlt} />
                         )
                     }
                     )
@@ -59,7 +60,7 @@ const ImageSection: React.FC<Props> = ({ data, padding }) => {
                         const imgAlt = image?.alternativeText ?? "Placeholder";
                         return (
                             <div key={idx} className={`w-full ${imgCount === 1 ? 'aspect-[2/1]' : 'aspect-[1/1]'} relative group`}>
-                                <img className="image-viewer w-full h-full overflow-clip object-cover rounded-2xl" src={import.meta.env.STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'} alt={imgAlt} />
+                                <img className="image-viewer w-full h-full overflow-clip object-cover rounded-2xl" src={STRAPI_URL + imgUrl + '?format=webp&w=1400&embed'} alt={imgAlt} />
                             </div>
                         )
                     }
