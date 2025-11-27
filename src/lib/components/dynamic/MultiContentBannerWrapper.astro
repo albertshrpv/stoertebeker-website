@@ -1,0 +1,54 @@
+---
+import type { Block } from "../../interfaces/page";
+import { Markup } from "react-render-markup";
+import MultiContentBanner from "./sub/MultiContentBanner";
+
+interface Props {
+  data: Block;
+}
+
+const { data } = Astro.props;
+const { blocks, componentSettings, id, __component } = data;
+const placeholderBlock = blocks[0];
+---
+
+<div id={componentSettings?.anchorId} class="overflow-x-clip">
+  <MultiContentBanner client:only="react" data={data as any} />
+  <section
+    id={data.componentSettings?.anchorId}
+    class="flex flex-col lg:flex-row h-full lg:h-auto lg:min-h-[65vh] lg:max-h-[75vh] 2xl:max-h-[65vh] p-6 md:p-16 lg:p-0"
+    placeholder-id={`multi-content-banner-${id}`}
+  >
+    <div class="h-[45vh] md:h-[55h] lg:h-auto w-full lg:w-1/2 rounded-t-2xl lg:rounded-t-none overflow-hidden">
+      <img
+        src={`https://backend.stoertebeker.de${placeholderBlock.image.url}?format=webp&w=1920&embed`}
+        alt={placeholderBlock.image.alternativeText || ""}
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <div
+      class="h-full lg:h-auto flex flex-col gap-8 xl:gap-12 justify-start w-full lg:w-1/2 bg-grey p-6 md:p-12 xl:p-20 rounded-b-2xl lg:rounded-b-none"
+    >
+      <div class="flex gap-4">
+        {
+          blocks.map((block: any, index: number) => (
+            <div
+              class={`h-11 w-11 rounded-full hover:cursor-pointer ${index === 0 ? "bg-primary-500 text-white" : "border border-primary-500 text-neutral-900"}`}
+            >
+              <div class="flex h-full w-full items-center justify-center">{index + 1}</div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class={`flex flex-col h-full justify-center gap-8 xl:gap-12 text-neutral-900`}>
+        <h3 class="text-2xl lg:text-3xl xl:text-4xl">
+          {placeholderBlock.title}
+        </h3>
+        <div class="markup">
+          <Markup markup={placeholderBlock.text} />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

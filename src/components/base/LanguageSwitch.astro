@@ -1,0 +1,14 @@
+---
+const secondary = Astro.props.secondary;
+---
+
+<div class="flex space-x-4 text-sm md:text-xl font-light">
+  <div>
+    <button class={`language-switch-de ${secondary ? "text-white" : "text-neutral-900"} focus:outline-none pt-2 pb-2`} data-lang="de"> DE </button>
+    <!-- <div class="underline-en w-full h-[1px] md:h-[2px] bg-primary dark:bg-white hidden"></div> -->
+  </div>
+  <div>
+    <button class={`language-switch-en ${secondary ? "text-white" : "text-neutral-900"} focus:outline-none pt-2 pb-2`} data-lang="en"> EN </button>
+    <!-- <div class="underline-de w-full h-[1px] md:h-[2px] bg-primary dark:bg-white hidden"></div> -->
+  </div>
+</div>

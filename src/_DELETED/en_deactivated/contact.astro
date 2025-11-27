@@ -1,0 +1,70 @@
+---
+import { Markup } from "react-render-markup";
+import TicketShopLayout from "../../layouts/TicketShopLayout.astro";
+import { PageType } from "../../lib/interfaces/page";
+import Footer from "../../components/ticketshop/components/Footer";
+import NavContact from "../../components/base/NavContact.astro";
+import TitleText from "../../components/ticketshop/components/TitleText";
+
+const metatitle = "Ticketshop - Störtebeker Festival";
+const metadescription = "Ticketshop für das Störtebeker Festival";
+
+let componentContentPadding = "px-6 md:px-16 xl:px-20 pb-6 md:pb-16 xl:pb-20";
+
+const text =
+    "<p>Here you will find all important information about contacting us, about how to get to Ralswiek and about the parking options on site. We look forward to your visit!</p>";
+---
+
+<TicketShopLayout
+    title={metatitle}
+    description={metadescription}
+    slug=""
+    pageType={PageType.tickets}
+    locale="de"
+    langSwitch={[{ locale: "en", slug: "tickets" }]}
+    footerType="base"
+>
+    <NavContact locale="en" />
+    <section class={`bigHeaderBackgroundContainer`}>
+        <img src="/images/contact.jpg" alt="Kontakt" class="w-full h-full object-cover" />
+    </section>
+    <TitleText subtitle="Störtebeker Festspiele" title={`<h1>Contact and Directions</h1>`} text={text} />
+    <!-- <TitleText
+        subtitle="Störtebeker Festspiele"
+        title={`<h1>Kontakt, Anfahrt <span class="!font-normal">und Anfahrtmöglichkeiten</span></h1>`}
+        text={text}
+    /> -->
+    <section class={`max-w-screen-2xl mx-auto w-full ${componentContentPadding}`}>
+        <div class="flex flex-col lg:flex-row gap-6 text-sm md:text-lg xl:text-xl">
+            <div class="relative w-full lg:w-1/2 overflow-clip">
+                <div class="relative w-full p-12 lg:p-10 xl:p-16 border-[2px] border-black">
+                    <a href="https://maps.app.goo.gl/MyyayccrF5DTXa759" target="_blank" class="flex flex-col gap-1 w-fit lg:mx-auto">
+                        <span class="text-xs md:text-sm lg:text-base mb-4">DIRECTIONS</span>
+                        <span>Störtebeker Festspiele GmbH & Co. KG</span>
+                        <span>Am Bodden 100</span>
+                        <span>18528 Ralswiek/Rügen</span>
+                    </a>
+                    <div class="absolute w-12 h-12 rounded-full -top-6 -left-6 z-10 border-[2px] bg-white border-black"></div>
+                    <div class="absolute w-12 h-12 rounded-full -bottom-6 -right-6 z-10 border-[2px] bg-white border-black"></div>
+                    <div class="absolute w-12 h-12 rounded-full -top-6 -right-6 z-10 border-[2px] bg-white border-black"></div>
+                    <div class="absolute w-12 h-12 rounded-full -bottom-6 -left-6 z-10 border-[2px] bg-white border-black"></div>
+                </div>
+            </div>
+            <div class="relative w-full lg:w-1/2 overflow-clip">
+                <div class="relative w-full p-12 lg:p-10 xl:p-16 border-[2px] border-black">
+                    <div class="flex flex-col gap-1 w-fit lg:mx-auto">
+                        <span class="text-xs md:text-sm lg:text-base mb-4">CONTACT</span>
+                        <a class="hover:underline" href="tel:0383831100">Phone: 03838 3110 0</a>
+                        <span>Fax: 03838 3131 92</span>
+                        <a class="hover:underline" href="mailto:info@stoertebeker.de">Email: info@stoertebeker.de</a>
+                    </div>
+                    <div class="absolute w-12 h-12 rounded-full -top-6 -left-6 z-10 border-[2px] bg-white border-black"></div>
+                    <div class="absolute w-12 h-12 rounded-full -bottom-6 -right-6 z-10 border-[2px] bg-white border-black"></div>
+                    <div class="absolute w-12 h-12 rounded-full -top-6 -right-6 z-10 border-[2px] bg-white border-black"></div>
+                    <div class="absolute w-12 h-12 rounded-full -bottom-6 -left-6 z-10 border-[2px] bg-white border-black"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="h-12"></div>
+</TicketShopLayout>

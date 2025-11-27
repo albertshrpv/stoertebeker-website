@@ -1,0 +1,30 @@
+---
+import { Markup } from "react-render-markup";
+import Layout from "../../layouts/Layout.astro";
+import { PageType } from "../../lib/interfaces/page";
+
+const metatitle = "Ticketshop - Störtebeker Festival";
+const metadescription = "Ticketshop for the Störtebeker Festival";
+
+let componentContentPadding = "px-6 md:px-16 xl:px-20 pb-6 md:pb-16 xl:pb-20";
+---
+
+<Layout
+    title={metatitle}
+    description={metadescription}
+    slug=""
+    pageType={PageType.tickets}
+    locale="en"
+    langSwitch={[{ locale: "de", slug: "tickets" }]}
+>
+    <section class={`overflow-x-clip`}>
+        <div class={`flex flex-col lg:flex-row max-w-[2000px] mx-auto w-full ${componentContentPadding}`}>
+            <div class={`w-full lg:w-1/2 pb-8 lg:pb-0 lg:pr-24`}>
+                <div class="markup">
+                    <Markup markup={"<h1>Tickets</h1>"} />
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
+

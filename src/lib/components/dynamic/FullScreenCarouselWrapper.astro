@@ -1,0 +1,32 @@
+---
+import type { Block } from "../../interfaces/page";
+import FullScreenCarousel from "./sub/FullScreenCarousel";
+
+interface Props {
+  data: Block;
+}
+
+const { data } = Astro.props;
+const { image, componentSettings, id, __component } = data;
+
+const placeHolderImage = image[0];
+---
+
+<div id={componentSettings?.anchorId} class="overflow-x-clip">
+  <FullScreenCarousel client:only="react" data={data as any} />
+
+  <section class="relative w-full h-[75vh] bg-primary-500 custom-cursor" placeholder-id={`full-screen-carousel-${id}`}>
+    <div id="carousel-example" class="relative w-full h-full overflow-hidden">
+      <div class="relative w-full h-full">
+        <div class={`absolute z-10 bg-white w-full h-full`}>
+          <img
+            src={`https://backend.stoertebeker.de${placeHolderImage.url}?format=webp`}
+            class="absolute block w-full h-full object-cover"
+            alt={image.alternativeText}
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

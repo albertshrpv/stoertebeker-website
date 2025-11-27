@@ -1,0 +1,23 @@
+---
+import { Markup } from "react-render-markup";
+import TicketShopLayout from "../../layouts/TicketShopLayout.astro";
+import { PageType } from "../../lib/interfaces/page";
+import App from "../../components/ticketshop/App";
+
+const metatitle = "Tickets & Gutscheine 2026 | Störtebeker Festspiele „Likedeeler“";
+const metadescription = "Störtebeker Festspiele 2026 „Likedeeler“ auf Rügen: Tickets mit Sitzplatzwahl, Bestplatzbuchung & Familienpreisen. Vorveranstaltung: Adlershow.";
+
+let componentContentPadding = "px-6 md:px-16 xl:px-20 pb-6 md:pb-16 xl:pb-20";
+---
+
+<TicketShopLayout
+    title={metatitle}
+    description={metadescription}
+    slug=""
+    pageType={PageType.tickets}
+    locale="de"
+    langSwitch={[{ locale: "en", slug: "tickets" }]}
+    footerType="ticketshop"
+>
+    <App client:only="react" />
+</TicketShopLayout>

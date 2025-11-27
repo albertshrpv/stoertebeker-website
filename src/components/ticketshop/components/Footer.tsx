@@ -1,0 +1,128 @@
+interface FooterProps {
+    locale: 'de' | 'en';
+}
+
+const componentContentPadding = "p-6 md:p-16 xl:p-20";
+const attributionPadding = "px-2 md:px-12 xl:px-16 2xl:px-20 py-4 lg:py-3";
+
+
+export default function Footer({ locale }: FooterProps) {
+
+
+    const translations = {
+        de: {
+            directions: "ANFAHRT",
+            contact: "KONTAKT",
+            links: "LINKS",
+            imprint: "Impressum",
+            privacy: "Datenschutzerklärung",
+            aGB: "Allgemeine Geschäftsbedingungen (AGB)",
+            a11y: "Barrierefreiheitserklärung",
+          },
+          en: {
+            directions: "DIRECTIONS",
+            contact: "CONTACT",
+            links: "LINKS",
+            imprint: "Imprint",
+            privacy: "Privacy Policy",
+            aGB: "Terms of Use",
+            a11y: "Accessibility Statement",
+          },
+    }
+    
+
+    const instaLink = "https://www.instagram.com/stoertebekerfestspiele";
+    const facebookLink = "https://www.facebook.com/stoertebekerfestspiele";
+    const youtubeLink = "https://www.youtube.com/channel/UCZpSDzDOinKzL4GgvkemOZA";
+    const spotifyLink = "https://open.spotify.com/show/1NyfMLB265RtZGqIbSAqlF";
+
+    const imprintLink = locale === "de" ? "/de/impressum" : "/en/imprint";
+    const privacyLink = locale === "de" ? "/de/datenschutz" : "/en/privacy";
+    const aGBLink = locale === "de" ? "/de/agb" : "/en/terms";
+    const a11yLink = locale === "de" ? "/de/barrierefreiheit" : "/en/accessibility";
+
+
+
+    return (
+        <footer className={`overflow-hidden relative bg-darkBlue text-white pt-4`}>
+            <div className={`flex flex-col lg:flex-row items-start justify-between gap-12 w-full max-w-screen-2xl mx-auto ${componentContentPadding}`}>
+
+                <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20 font-light">
+
+                    <a href="https://maps.app.goo.gl/MyyayccrF5DTXa759" target="_blank" className="flex flex-col gap-1">
+                        <span className="text-xs mb-4">{translations[locale].directions}</span>
+                        <span>Störtebeker Festspiele GmbH & Co. KG</span>
+                        <span>Am Bodden 100</span>
+                        <span>18528 Ralswiek/Rügen</span>
+                    </a>
+
+                    <div className="flex flex-col gap-1">
+                        <span className="text-xs mb-4">{translations[locale].contact}</span>
+                        <a href="tel:0383831100">Tel: 03838 3110 0</a>
+                        <span>Fax: 03838 3131 92</span>
+                        <a href="mailto:info@stoertebeker.de">info@stoertebeker.de</a>
+                    </div>
+
+                    <div className="flex flex-col gap-1">
+                        <span className="text-xs mb-4">{translations[locale].links}</span>
+                        <a href={imprintLink}  className="hover:underline">{translations[locale].imprint}</a>
+                        <a href={privacyLink}  className="hover:underline">{translations[locale].privacy}</a>
+                        <a href={aGBLink}  className="hover:underline">{translations[locale].aGB}</a>
+                        <a href={a11yLink}  className="hover:underline">{translations[locale].a11y}</a>
+                        <button type="button" data-cc="show-preferencesModal" className="flex items-center justify-start" aria-haspopup="dialog">Cookie-Einstellungen</button>                    </div>
+
+                </div>
+
+                <div className="flex items-center gap-6 w-full lg:w-auto justify-between lg:justify-start">
+                    <a href={instaLink} aria-label="Instagram" target="_blank" className="hover:underline group">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200 ease-out group-hover:scale-[1.2]">
+                            <g clip-path="url(#clip0_12749_988)">
+                                <path d="M15.5 2.79121C19.6414 2.79121 20.1318 2.80937 21.7605 2.88203C23.2742 2.94863 24.0916 3.20293 24.6365 3.41484C25.357 3.69336 25.8777 4.03242 26.4166 4.57129C26.9615 5.11621 27.2945 5.63086 27.573 6.35137C27.785 6.89629 28.0393 7.71973 28.1059 9.22734C28.1785 10.8621 28.1967 11.3525 28.1967 15.4879C28.1967 19.6293 28.1785 20.1197 28.1059 21.7484C28.0393 23.2621 27.785 24.0795 27.573 24.6244C27.2945 25.3449 26.9555 25.8656 26.4166 26.4045C25.8717 26.9494 25.357 27.2824 24.6365 27.5609C24.0916 27.7729 23.2682 28.0271 21.7605 28.0938C20.1258 28.1664 19.6353 28.1846 15.5 28.1846C11.3586 28.1846 10.8682 28.1664 9.23945 28.0938C7.72578 28.0271 6.9084 27.7729 6.36348 27.5609C5.64297 27.2824 5.12226 26.9434 4.5834 26.4045C4.03848 25.8596 3.70547 25.3449 3.42695 24.6244C3.21504 24.0795 2.96074 23.2561 2.89414 21.7484C2.82148 20.1137 2.80332 19.6232 2.80332 15.4879C2.80332 11.3465 2.82148 10.8561 2.89414 9.22734C2.96074 7.71367 3.21504 6.89629 3.42695 6.35137C3.70547 5.63086 4.04453 5.11016 4.5834 4.57129C5.12832 4.02637 5.64297 3.69336 6.36348 3.41484C6.9084 3.20293 7.73184 2.94863 9.23945 2.88203C10.8682 2.80937 11.3586 2.79121 15.5 2.79121ZM15.5 0C11.292 0 10.7652 0.0181641 9.1123 0.0908203C7.46543 0.163477 6.3332 0.429883 5.35234 0.811328C4.3291 1.21094 3.46328 1.7377 2.60352 2.60352C1.7377 3.46328 1.21094 4.3291 0.811328 5.34629C0.429883 6.3332 0.163477 7.45937 0.0908203 9.10625C0.0181641 10.7652 0 11.292 0 15.5C0 19.708 0.0181641 20.2348 0.0908203 21.8877C0.163477 23.5346 0.429883 24.6668 0.811328 25.6477C1.21094 26.6709 1.7377 27.5367 2.60352 28.3965C3.46328 29.2562 4.3291 29.7891 5.34629 30.1826C6.3332 30.5641 7.45937 30.8305 9.10625 30.9031C10.7592 30.9758 11.2859 30.9939 15.4939 30.9939C19.702 30.9939 20.2287 30.9758 21.8816 30.9031C23.5285 30.8305 24.6607 30.5641 25.6416 30.1826C26.6588 29.7891 27.5246 29.2562 28.3844 28.3965C29.2441 27.5367 29.7769 26.6709 30.1705 25.6537C30.5519 24.6668 30.8184 23.5406 30.891 21.8938C30.9637 20.2408 30.9818 19.7141 30.9818 15.5061C30.9818 11.298 30.9637 10.7713 30.891 9.11836C30.8184 7.47148 30.5519 6.33926 30.1705 5.3584C29.7891 4.3291 29.2623 3.46328 28.3965 2.60352C27.5367 1.74375 26.6709 1.21094 25.6537 0.817383C24.6668 0.435937 23.5406 0.169531 21.8937 0.096875C20.2348 0.0181641 19.708 0 15.5 0Z" fill="#F2EFE5" />
+                                <path d="M15.5 7.53845C11.1043 7.53845 7.53809 11.1047 7.53809 15.5004C7.53809 19.8961 11.1043 23.4623 15.5 23.4623C19.8957 23.4623 23.4619 19.8961 23.4619 15.5004C23.4619 11.1047 19.8957 7.53845 15.5 7.53845ZM15.5 20.665C12.6482 20.665 10.3354 18.3521 10.3354 15.5004C10.3354 12.6486 12.6482 10.3357 15.5 10.3357C18.3518 10.3357 20.6646 12.6486 20.6646 15.5004C20.6646 18.3521 18.3518 20.665 15.5 20.665Z" fill="#F2EFE5" />
+                                <path d="M25.6346 7.22281C25.6346 8.2521 24.799 9.0816 23.7758 9.0816C22.7465 9.0816 21.917 8.24605 21.917 7.22281C21.917 6.19351 22.7525 5.36401 23.7758 5.36401C24.799 5.36401 25.6346 6.19956 25.6346 7.22281Z" fill="#F2EFE5" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_12749_988">
+                                    <rect width="31" height="31" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </a>
+
+
+                    <a href={facebookLink} aria-label="Facebook" target="_blank" className="hover:underline group">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200 ease-out group-hover:scale-[1.2]">
+                            <path d="M15.4997 0C6.93952 0 0 6.96515 0 15.5569C0 22.8525 5.00454 28.9745 11.7556 30.6559V20.3111H8.55955V15.5569H11.7556V13.5084C11.7556 8.21344 14.1432 5.75918 19.3225 5.75918C20.3046 5.75918 21.999 5.95271 22.6922 6.14561V10.4549C22.3264 10.4163 21.6909 10.397 20.9016 10.397C18.3603 10.397 17.3783 11.3634 17.3783 13.8755V15.5569H22.4411L21.5712 20.3111H17.3783V31C25.0531 30.0697 31 23.5109 31 15.5569C30.9994 6.96515 24.0599 0 15.4997 0Z" fill="#F2EFE5" />
+                        </svg>
+                    </a>
+
+                    <a href={spotifyLink} aria-label="Spotify" target="_blank" className="hover:underline group">
+                        <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200 ease-out group-hover:scale-[1.2]">
+                            <path d="M15.4999 0C6.93973 0 0 6.93971 0 15.5001C0 24.0608 6.93973 31 15.4999 31C24.061 31 31 24.0608 31 15.5001C31 6.94026 24.061 0.00074037 15.4997 0.00074037L15.4999 0ZM22.6081 22.3556C22.3304 22.8109 21.7344 22.9553 21.2791 22.6758C17.6399 20.4528 13.0586 19.9494 7.66324 21.1821C7.14332 21.3006 6.62508 20.9748 6.50662 20.4547C6.38761 19.9346 6.71207 19.4163 7.23328 19.2978C13.1376 17.9483 18.2022 18.5297 22.2879 21.0266C22.7432 21.3061 22.8876 21.9003 22.6081 22.3556ZM24.5052 18.1345C24.1554 18.7037 23.4114 18.8832 22.8431 18.5334C18.6768 15.9719 12.3258 15.2302 7.39782 16.7262C6.75871 16.9192 6.08369 16.559 5.88972 15.921C5.69722 15.2819 6.05759 14.6081 6.69559 14.4138C12.3247 12.7057 19.3227 13.5331 24.1073 16.4733C24.6755 16.8231 24.855 17.567 24.5052 18.1345ZM24.6681 13.7397C19.6726 10.7724 11.4305 10.4996 6.66098 11.9472C5.89508 12.1795 5.08513 11.7471 4.85303 10.9812C4.62093 10.2149 5.05293 9.40552 5.81938 9.17267C11.2945 7.51054 20.3963 7.83167 26.1477 11.2461C26.8381 11.655 27.0639 12.5447 26.6549 13.2327C26.2477 13.9216 25.3555 14.1487 24.6688 13.7397H24.6681Z" fill="#F2EFE5" />
+                        </svg>
+                    </a>
+
+                    <a href={youtubeLink} aria-label="Youtube" target="_blank" className="hover:underline group">
+                        <svg width="33" height="24" viewBox="0 0 33 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200 ease-out group-hover:scale-[1.2]">
+                            <path d="M32.6713 5.17856C32.6713 5.17856 32.349 2.82588 31.3564 1.79284C30.0996 0.433213 28.6945 0.426548 28.05 0.34657C23.4352 -1.90682e-07 16.5064 0 16.5064 0H16.4936C16.4936 0 9.56484 -1.90682e-07 4.95 0.34657C4.30547 0.426548 2.90039 0.433213 1.64355 1.79284C0.650977 2.82588 0.335156 5.17856 0.335156 5.17856C0.335156 5.17856 0 7.94446 0 10.7037V13.2896C0 16.0489 0.328711 18.8148 0.328711 18.8148C0.328711 18.8148 0.650976 21.1675 1.63711 22.2005C2.89395 23.5601 4.54395 23.5135 5.27871 23.6601C7.92129 23.92 16.5 24 16.5 24C16.5 24 23.4352 23.9867 28.05 23.6468C28.6945 23.5668 30.0996 23.5601 31.3564 22.2005C32.349 21.1675 32.6713 18.8148 32.6713 18.8148C32.6713 18.8148 33 16.0555 33 13.2896V10.7037C33 7.94446 32.6713 5.17856 32.6713 5.17856ZM13.0904 16.4288V6.8381L22.0043 11.6501L13.0904 16.4288Z" fill="#F2EFE5" />
+                        </svg>
+                    </a>
+
+
+                </div>
+
+
+            </div>
+            <div className="w-full lg:p-4 mt-4 lg:mt-0">
+                <div className={`flex flex-col lg:flex-row justify-between bg-white text-darkBlue items-center w-full lg:rounded-full text-sm max-w-screen-2xl mx-auto ${attributionPadding}`}>
+                    <div className="">
+                        Copyright © 2025. All rights reserved.
+                    </div>
+                    <div className="">
+                        Digitally Transformed by <a href="https://platzdorsch.de" target="_blank" className="hover:underline">PLATZDORSCH</a> 🚀
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+}

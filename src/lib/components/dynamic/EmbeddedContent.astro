@@ -1,0 +1,60 @@
+---
+import type { Block } from "../../interfaces/page";
+import { Markup } from "react-render-markup";
+import VideoEmbed from "./sub/VideoEmbed.jsx";
+import ActionButton from "../buttons/ActionButton";
+
+interface Props {
+  data: Block;
+  padding: string;
+}
+
+const { data, padding } = Astro.props;
+const { link, title, text, blocks, id, __component } = data;
+const isDev = import.meta.env.DEV;
+---
+
+<section id={data.componentSettings?.anchorId} class={`max-w-screen-2xl text-start mx-auto ${padding}`}>
+  <div class="flex flex-col lg:flex-row justify-start items-center w-full gap-8 lg:gap-10 xl:gap-16">
+    <div class="flex flex-col gap-6 lg:gap-10 w-full lg:w-1/2">
+      {
+        title && (
+          <div
+            id={`ckeditor-${__component}-${id}-title`}
+            class="markup ckeditor-inline"
+            contenteditable={isDev}
+            data-component-id={id}
+            data-component-type={__component}
+            data-field-name="title"
+          >
+            <Markup markup={title} />
+          </div>
+        )
+      }
+      {
+        text && (
+          <div
+            id={`ckeditor-${__component}-${id}-text`}
+            class="markup ckeditor-inline"
+            contenteditable={isDev}
+            data-component-id={id}
+            data-component-type={__component}
+            data-field-name="text"
+          >
+            <Markup markup={text} />
+          </div>
+        )
+      }
+      {
+        blocks && (
+          <div class="flex gap-4">
+            <ActionButton text={blocks.text} link={blocks.link} />
+          </div>
+        )
+      }
+    </div>
+    <div class="w-full lg:w-1/2">
+      <VideoEmbed client:load embedUrl={link} />
+    </div>
+  </div>
+</section>

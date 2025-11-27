@@ -1,0 +1,545 @@
+---
+import { Markup } from "react-render-markup";
+import TicketShopLayout from "../../layouts/TicketShopLayout.astro";
+import { PageType } from "../../lib/interfaces/page";
+import Footer from "../../components/ticketshop/components/Footer";
+import NavContact from "../../components/base/NavContact.astro";
+import TitleText from "../../components/ticketshop/components/TitleText";
+import CornerBorderedContainer from "../../components/ticketshop/components/CornerBorderedContainer";
+import TitleTextBasic from "../../components/ticketshop/components/TitleTextBasic";
+
+const metatitle = "AGB -Ticketshop - Störtebeker Festspiele";
+const metadescription = "AGB für den Ticketshop der Störtebeker Festspiele";
+
+let componentContentPadding = "px-6 md:px-16 xl:px-20 pb-6 md:pb-16 xl:pb-20";
+
+
+---
+
+<TicketShopLayout
+    title={metatitle}
+    description={metadescription}
+    slug="kontakt"
+    pageType={PageType.tickets}
+    locale="de"
+    langSwitch={[{ locale: "en", slug: "tickets" }]}
+    footerType="base"
+>
+    <!-- <NavContact locale="de" /> -->
+    <section class={`bigHeaderBackgroundContainer`}>
+        <img src="/images/contact.jpg" alt="Kontakt" class="w-full h-full object-cover" />
+    </section>
+    <section class={`max-w-screen-2xl mx-auto w-full ${componentContentPadding}`}>
+            <div class='w-full'>
+                
+                <div class='markup'>
+                <h1 class="mt-12 mb-12 lg:mt-24">Allgemeine Geschäftsbedingungen</h1>
+                </div>
+            </div>
+            <div class="w-full mt-8">
+                <div class='markup'>
+                <p>
+    Allgemeine Geschäftsbedingungen der Störtebeker Festspiele GmbH &amp; Co. KG für den
+    Verkauf von Eintrittskarten und den Besuch der Störtebeker Festspiele in Ralswiek/Rügen
+</p>
+<h2 class="text-xl font-bold">
+    1. Geltungsbereich
+</h2>
+<p>
+    Die nachfolgenden Allgemeinen Geschäftsbedingungen (AGB) gelten für Bestellungen und
+    den Kauf von Eintrittskarten zu den Störtebeker Festspielen und regeln die rechtlichen
+    Beziehungen zwischen den Besuchern der Störtebeker Festspiele und der Störtebeker
+    Festspiele GmbH &amp; Co. KG (nachfolgend „wir“ oder „SF“ genannt). Sie gelten auch
+    gegenüber Reiseveranstaltern und Kartenvertriebsunternehmen, soweit im Einzelfall nichts
+    Abweichendes vereinbart ist.
+</p>
+<p>
+    Die jeweils gültige Fassung unserer AGB ist unter https://stoertebeker.de/agb/ zu finden und
+    kann gespeichert oder ausgedruckt werden. Hiervon abweichende Bedingungen des
+    Käufers/Besuchers erkennen wir nicht an, es sei denn, wir haben ihnen ausdrücklich
+    schriftlich zugestimmt.
+</p>
+<p>
+    Der Käufer („Sie“) sorgt dafür, dass die Bestimmungen zum Zutritt, zum Verhalten auf dem
+    Gelände der Störtebeker Festspiele sowie zu Bild- und Tonaufnahmen allen
+    bekanntgemacht wird, an die er die Eintrittskarten weitergibt.
+</p>
+<h2>
+    2. Störtebeker Festspiele und Adlershow
+</h2>
+<p>
+    <strong>2.1 </strong>Wir veranstalten alljährlich die Freilichttheaterproduktionen der Störtebeker Festspiele
+    und sind für deren Durchführung verantwortlich.
+</p>
+<p>
+    <strong>2.2</strong> Im Vorprogramm können Sie eine Vorführung mit und über Greifvögel („Adlershow“)
+    erleben. Eintrittskarten zur „Adlershow“ sind nur in Kombination mit dem Erwerb von
+    Eintrittskarten zur Theatervorführung erhältlich. Veranstalter – und damit Verantwortlicher
+    – der „Adlershow“ sind jedoch nicht wir, sondern der jeweils ausführende Falkner, derzeit
+    die Falknerei Volker Walter, Osteroder Str. 45, 47259 Duisburg. Die Karten, die Sie für die
+    „Adlershow“ erwerben, vermitteln wir Ihnen im Auftrag der Falknerei.
+</p>
+<h2>
+    3. Eintrittspreise
+</h2>
+<p>
+    <strong>3.1</strong> Die Eintrittspreise für die Theatervorführungen und die „Adlershow“ finden Sie auf
+    unserer Website, auf unseren Flyern, an den Vorverkaufsstellen und an der Theaterkasse.
+    Sie enthalten die gesetzliche Umsatzsteuer und verstehen sich zuzüglich etwaiger System-
+    oder Bearbeitungsgebühren, wie sie nachfolgend bzw. während des Buchungsvorgangs
+    erläutert werden.
+</p>
+<p>
+    <strong>3.2</strong> Soweit wir Ermäßigungen für Kinder gewähren, gelten diese bis einschließlich 15 Jahre.
+    Kinder bis 4 Jahre haben freien Eintritt, wenn sie keinen eigenen Sitzplatz in Anspruch
+    nehmen und auf den Schoß genommen werden. Gruppenermäßigungen gewähren wir ab
+    dem Kauf von 21 Eintrittskarten für Vorstellungen von montags bis freitags in den
+    Platzgruppen I - V. An Samstagen gibt es keine Gruppenermäßigungen.
+</p>
+<h2>
+    4. Eintrittskartenerwerb und Gutscheine
+</h2>
+<p>
+    Eintrittskarten für die Theatervorführung und die „Adlershow“ können Sie jeweils ab
+    Oktober für die nächste Spielzeit wie folgt erwerben:
+</p>
+<p>
+    <strong>4.1</strong> Internet, schriftliche und telefonische Kartenbestellungen
+</p>
+<p>
+    Beim Kauf über unsere Website stoertebeker.de/agb/bei schriftlichen Bestellungen oder
+    über unseren telefonischen Kartenvertrieb erheben wir Systemgebühren in jeweils
+    bekanntgegebener Höhe pro Karte. Bearbeitungsgebühren in jeweils bekanntgegebener
+    Höhe pro Bestellung (unabhängig von der Anzahl der gekauften Karten) berechnen wir für
+    die Hinterlegung von Karten oder Gutscheinen an der Abendkasse oder ihren Postversand.
+    Am Tag der gewünschten Vorstellung ist ein Kartenverkauf über Website oder Telefon nicht
+    mehr möglich. Bei schriftlichen Bestellungen übersenden wir Ihnen eine Bestellbestätigung
+    mit Angabe zu den reservierten Plätzen und dem Gesamtpreis per Post oder E-Mail.
+</p>
+<p>
+    <strong>4.2</strong> Eintrittskartenerwerb und Reservierungen für Gruppen
+</p>
+<p>
+    Gruppen ab 21 Personen erhalten für Vorstellungen von montags bis freitags in den
+    Platzgruppen I – V eine Ermäßigung in Höhe von 10 % auf den Kartenpreis. An Samstagen
+    gibt es keine Gruppenermäßigungen.
+</p>
+<p>
+    Wir reservieren Ihnen gerne Ihre Eintrittskarten. Eine Reservierung gilt längstens bis 6
+    Wochen vor dem gebuchten Vorstellungstag. Bis dahin müssen Sie den vollständigen
+    Rechnungsbetrag auf unser Konto überwiesen haben. Geht die Zahlung nicht rechtzeitig
+    und vollständig ein, verfällt die Reservierung und die Eintrittskarten gehen wieder in den
+    Verkauf. Etwaige gezahlte Teilbeträge erstatten wir Ihnen in diesem Fall zurück. Eine
+    Verlängerung der Reservierung ist nicht möglich.
+</p>
+<p>
+    Nach Eingang Ihrer Zahlung schicken wir Ihnen die Eintrittskarten per Post zu. Bezahlte
+    aber nicht benötigte Eintrittskarten können sie unter Angabe Ihrer IBAN bis 4 Wochen vor
+    der Vorstellung zurückschicken. Die zu stornierenden Karten müssen uns im Original zum
+    Fristablauf vorliegen. Wir überweisen Ihnen die Differenz. Wenn Sie so viele Eintrittskarten
+    zurückgeben, dass Ihnen weniger als 21 Karten verbleiben, entfällt die Ermäßigung. Die
+    Erstattung des zu viel gezahlten Betrages erfolgt in diesem Fall unter Verrechnung mit der
+    Differenz zum vollen Kartenpreis. Ausnahmen können wir nicht gewähren.
+</p>
+<p>
+    Wir berechnen pro Bestellung eine einmalige Bearbeitungsgebühr in jeweils
+    bekanntgegebener Höhe. Geben Sie bitte bei der Kartenbestellung die maximale Anzahl der
+    benötigten Eintrittskarten an.
+</p>
+<p>
+    Für Nachbestellungen, die nach Rechnungsstellung und Bezahlung der ersten Bestellung
+    eingehen, gewähren wir keine Gruppenermäßigung mehr, es sei denn Sie bestellen 21 oder
+    mehr Karten nach.
+</p>
+<p>
+    Begleitet ein Reiseleiter eine Gruppe von ab 21 Personen, erhält dieser in der gleichen
+    Platzgruppe wie die mitreisenden Personen eine Reiseleiter-Freikarte. Bitte geben Sie dies
+    bei der Reservierung mit an.
+</p>
+<p>
+    Pro Bus erhalten Sie einen Gutschein für den Busfahrer, der freien Eintritt im nicht
+    nummerierten Bereich (Platzgruppe VI), einen Snack seiner Wahl und ein Getränk beinhaltet.
+    Diesen legen wir den bezahlten Eintrittskarten bereits bei. Bitte übergeben Sie den
+    Gutschein bei Abfahrt an den Fahrer.
+</p>
+<p>
+    <strong>4.3</strong> Andere Verkaufsstellen
+</p>
+<p>
+    Andere Verkaufsstellen erheben möglicherweise ebenfalls Systemgebühren und weitere
+    Verkaufsgebühren. Bitte informieren Sie sich beim jeweiligen Anbieter über die Preise.
+</p>
+<p>
+    <strong>4.4</strong> Gutscheine
+</p>
+<p>
+    Gutscheine sind für jede Vorstellung einlösbar, vorausgesetzt es gibt noch Karten in der
+    gewünschten Preiskategorie und der Gutschein ist nicht älter als drei Jahre seit
+    Ausstellungsdatum. Gutscheine können über die oben aufgeführten Erwerbswege eingelöst
+    werden, indem sie entweder vorgelegt werden oder die Gutscheinnummer während des
+    Bestellvorgangs angegeben wird. Der Wert der Gutscheine wird nicht in bar ausgezahlt. Der
+    Kauf neuer Gutscheine mit alten Gutscheinen ist nicht möglich.
+</p>
+<h2>
+    5. Vertragsschluss über die Website stoertebeker.de bzw. booking.stoertebeker.de
+</h2>
+<p>
+    <strong>5.1</strong> Nachdem Sie den Bestellprozess durchlaufen und diese AGB durch Anklicken des
+    entsprechenden Buttons akzeptiert haben, geben Sie mit Anklicken des Buttons „Jetzt
+    kaufen“ ein verbindliches Kaufangebot ab. Eingabefehler oder Änderungen können Sie
+    vorher noch durch Betätigen des „Zurück“-Buttons im Browser oder auf der dafür
+    vorgesehenen Schaltfläche vornehmen. Oder Sie klicken auf „Entfernen“ im Warenkorb und
+    der Artikel wird gelöscht.
+</p>
+<p>
+    <strong>5.2</strong> Der Kaufvertrag kommt erst zustande, wenn Sie eine Auftragsbestätigung, in der alle
+    Einzelheiten Ihrer Bestellung aufgeführt sind, erhalten und wir die Annahme ihres
+    Kaufangebots ausdrücklich oder konkludent (z.B. durch Übersendung der Eintrittskarten
+    oder Gutscheine) annehmen. Das erfolgt in der Regel umgehend, spätestens innerhalb von
+    drei Werktagen. Bei Bestellungen auf Vorkasse (Banküberweisung - siehe unten Ziffer 6.2)
+    kommt der Vertrag erst nach vollständigem und fristgemäßem Zahlungseingang auf
+    unserem Konto zustande. Bis dahin führen wir Ihre Bestellung als Reservierung. Diese
+    Reservierung verfällt, wenn Sie nicht rechtzeitig, wie unter Ziffer 6.2 angegeben, bezahlen.
+</p>
+<p>
+    <strong>5.3</strong> Bestellbestätigung
+</p>
+<p>
+    Der Text Ihrer Bestellung wird von uns gespeichert. Nach Abschluss des Bestellvorgangs
+    kann er nicht mehr abgerufen werden. Wir übermitteln Ihnen die Informationen aus Ihrer
+    Bestellung jedoch mit unserer Bestellbestätigung. Natürlich können Sie die Details Ihrer
+    Bestellung auch unmittelbar vor Absenden ausdrucken oder speichern.
+</p>
+<p>
+    <strong>5.4</strong> Der Vertragsschluss ist in deutscher und englischer Sprache möglich.
+</p>
+<p>
+    <strong>5.5 </strong>Sie stimmen der Übersendung von elektronischen Rechnungen zu. Wir können sie
+    entweder per E-Mail im pdf-Fomat schicken oder in Ihrem Nutzerbereich hinterlegen und
+    Sie entsprechend informieren.
+</p>
+<h2>
+    6. Zahlungsmöglichkeiten
+</h2>
+<p>
+    <strong>6.1</strong> Für die Bezahlung der Eintrittskarten stehen Ihnen die jeweils bekanntgegebenen
+    Zahlungsmöglichkeiten zur Verfügung. Derzeit bieten wir Ihnen die Bezahlung per Vorkasse
+    (Banküberweisung), per Kreditkarte der Anbieter Visa, MasterCard, American Express,
+    Discover per Girokarte maestro, über die Zahlungsdienstleister PayOne der BS Payone
+    GmbH, ADYEN oder PayPal der PayPal (Europe) S.à r.l. et Cie, S.C.A. an. Zur Absicherung
+    unseres Kreditrisikos behalten wir uns vor, im Einzelfall bestimmte Zahlungsarten
+    auszuschließen.
+</p>
+<p>
+    <strong>6.2</strong> Der Erwerb von Eintrittskarten per Vorkasse ist nur für Gutscheine oder solche
+    Vorstellungen möglich, die frühestens drei Wochen nach dem Bestelldatum stattfinden.
+    Haben Sie die Eintrittskarten per Vorkasse bestellt, überweisen Sie bitte den in der
+    Bestellbestätigung genannten Betrag vollständig so rechtzeitig, dass er innerhalb von zehn
+    Tagen bzw. dem in der Bestellbestätigung genannten Datum auf dem genannten Konto
+    eingeht. Die Eintrittskarten oder Gutscheine werden erst nach Zahlungseingang versandt.
+    Wird der Betrag nicht innerhalb der Frist unserem Konto gutgeschrieben, erlischt die
+    Reservierung mit der Folge, dass die Eintrittskarten wieder in den freien Verkauf gehen und
+    eine etwaige Gutscheinreservierung verfällt. Verspätet eingegangene Zahlungen werden auf
+    das Konto zurückerstattet, von dem die Zahlung angewiesen wurde.
+</p>
+<h2>
+    7. Kein gewerblicher Weiterverkauf
+</h2>
+<p>
+    Der Kauf von Eintrittskarten zum Zweck des gewerblichen Weiterverkaufs oder die
+    Verwendung für gewerbliche Werbe- oder Marketingzwecke (z.B. Gewinnspiele oder
+    Preisausschreiben) ist ohne unsere vorherige schriftliche Zustimmung nicht gestattet.
+    Untersagt ist auch der Weiterverkauf zu einem höheren, als auf der Eintrittskarte
+    angegebenen Preis. Verstoßen Sie gegen diese Verbote, verlieren die Eintrittskarten ihre
+    Gültigkeit.
+</p>
+<h2>
+    8. Kartenversand – Kartenhinterlegung: E-Ticket/Print-at-home
+</h2>
+<p>
+    Eintrittskarten können Sie neben dem direkten Erwerb an der Kasse, je nach Bestellvorgang
+    entweder an der Theaterkasse hinterlegen, sich zuschicken lassen oder selbst ausdrucken.
+</p>
+<p>
+    <strong>8.1</strong> An der Theaterkasse hinterlegte und bereits bezahlte Karten können zu den
+    Kassenöffnungszeiten unter Vorlage der Buchungsnummer und des Personalausweises des
+    Abholers abgeholt werden. Sind Abholer und Käufer nicht identisch, muss der Abholer eine
+    Vollmacht des Käufers vorweisen.
+</p>
+<p>
+    Karten, die noch nicht bezahlt und lediglich aus Kulanz zurückgelegt wurden, sind
+    spätestens zwei Stunden vor Beginn der gebuchten Vorstellung zu bezahlen und abzuholen.
+    Anderenfalls verfällt die Reservierung und die Karten gehen wieder in den freien Verkauf.
+</p>
+<p>
+    <strong>8.2</strong> Eintrittskarten schicken wir Ihnen auf Wunsch auch per einfacher Post zu oder
+    hinterlegen sie für Sie an der Abendkasse. Wir berechnen hierfür eine Bearbeitungsgebühr
+    in jeweils bekanntgegebener Höhe pro Bestellvorgang. Ferner versenden wir Eintrittskarten
+    nur, wenn die Bezahlung mindestens zehn Tage (Zahlungseingang) vor dem Tag der
+    Vorstellung erfolgt ist. Bei späterem mit uns vereinbartem Zahlungseingang hinterlegen wir
+    die Karten an der Abendkasse, wo sie gemäß Ziffer 8.1 abgeholt werden können. Bitte
+    informieren Sie uns unverzüglich, sollten die Eintrittskarten wider Erwarten nicht rechtzeitig
+    bei Ihnen eingetroffen sein. Der Kartenversand erfolgt auf Ihre Gefahr.
+</p>
+<p>
+    <strong>8.3 </strong>Bestellen Sie über stoertebeker.de haben Sie die Möglichkeit, die Eintrittskarten direkt
+    auszudrucken (print@home). Hierfür benötigen Sie das Programm Acrobat Reader.
+    Bearbeitungsgebühren berechnen wir Ihnen hierfür nicht. Die Rechnung wird Ihnen in
+    diesem Fall ebenfalls in elektronischer Form überlassen.
+</p>
+<h2>
+    9. Gesetzliches Widerrufsrecht
+</h2>
+<p>
+    <strong>9.1</strong> Verbrauchern steht bei Fernabsatzgeschäften und außerhalb von Geschäftsräumen
+    geschlossenen Verträgen grundsätzlich ein gesetzliches Widerrufsrecht zu, über das wir Sie
+    nachfolgend informieren.
+</p>
+<p>
+    Bitte beachten Sie jedoch, dass das gesetzliche Widerrufsrecht gemäß § 312g Abs. 2 S. 1
+    Nr.9 BGB nicht für solche Verträge gilt, die die Erbringung einer Dienstleistung im
+    Zusammenhang mit Freizeitbetätigungen vorsehen, wenn der Vertrag für die Erbringung
+    einen spezifischen Termin oder Zeitraum vorsieht. Das ist beim Kauf von Eintrittskarten für
+    Veranstaltungen, wie Theateraufführungen oder „Adlershows“, aber der Fall. Deshalb ist
+    Ihre Kartenbestellung unmittelbar mit unserer Annahme bindend und verpflichtet Sie zur
+    Abnahme und Bezahlung der Eintrittskarten.
+</p>
+<p>
+    <strong>9.2 </strong>Für alle anderen Verträge (z.B. Gutscheinkauf) mit Verbrauchern informieren wir Sie
+    über das gesetzliche Widerrufsrecht wie folgt:
+</p>
+<h3>
+    Widerrufsbelehrung
+</h3>
+<p>
+    <strong>9.2.1 Widerrufsrecht</strong>
+</p>
+<p>
+    Sie haben das Recht, binnen 14 Tagen ohne Angaben von Gründen diesen Vertrag zu
+    widerrufen. Die Widerrufsfrist beträgt 14 Tage ab dem Tag, an dem Sie oder ein von Ihnen
+    benannter Dritter, der nicht Beförderer ist, die Waren in Besitz genommen haben bzw. hat.
+</p>
+<p>
+    Um Ihr Widerrufsrecht auszuüben, müssen Sie uns, Störtebeker Festspiele GmbH &amp; Co. KG,
+    Am Bodden 100, 18528 Ralswiek, Tel. 03838-31100, E-Mail: info@stoertebeker.de,
+    mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-
+    Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür
+    das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
+    Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des
+    Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
+</p>
+<p>
+    <strong>9.2.2 Folgen des Widerrufs</strong>
+</p>
+<p>
+    Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen
+    erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die
+    sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene,
+    günstige Standardlieferung gewählt haben), unverzüglich und spätestens binnen 14 Tagen ab
+    dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrages bei
+    uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie
+    bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde
+    ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen dieser
+    Rückzahlung Entgelte berechnet.
+</p>
+<p>
+    Wir können die Rückzahlung verweigern, bis wir die Ware wieder zurückerhalten haben oder
+    bis Sie den Nachweis erbracht haben, dass Sie die Waren zurückgesandt haben, je
+    nachdem, welches der frühere Zeitpunkt ist.
+</p>
+<p>
+    Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen 14 Tagen ab dem
+    Tag, an dem Sie uns über den Widerruf dieses Vertrages unterrichten, an uns
+    zurückzusenden oder zu übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf
+    der Frist von 14 Tagen absenden. Sie tragen die unmittelbaren Kosten der Rücksendung der
+    Waren. Sie müssen für einen etwaigen Wertverlust der Waren nur aufkommen, wenn dieser
+    Wertverlust auf einen zur Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise
+    der Waren nicht notwendigen Umgang mit ihnen zurückzuführen ist.
+</p>
+<p>
+    <strong>9.2.3 Muster-Widerrufsformular</strong>
+</p>
+<p>
+    (Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und
+    senden Sie es zurück.)
+</p>
+<p>
+    • Störtebeker Festspiele GmbH &amp; Co. KG, Am Bodden 100, 18528 Ralswiek, E-
+    Mail: info@stoertebeker.de:
+    • Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den
+    Kauf der folgenden Waren (*)/ die Erbringung der folgenden Dienstleistung (*)
+    • Bestellt am (*)/erhalten am (*)
+    • Name des/der Verbraucher(s)
+    • Anschrift des/der Verbraucher(s)
+    • Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier) • Datum
+    ____________________
+    (*) Unzutreffendes streichen
+    <i>Ende der Widerrufsbelehrung und des Muster-Widerrufsformulars</i>
+    &nbsp;
+</p>
+<h2>
+    10. Erwerb und Gültigkeit von Eintrittskarten
+</h2>
+<p>
+    Eintrittskarten für die Störtebeker Festspiele sind ausschließlich über die offizielle Website
+    www.stoertebeker.de sowie über die autorisierten Vorverkaufsstellen der Störtebeker
+    Festspiele erhältlich. Nur über diese offiziellen Vertriebswege erworbene Eintrittskarten
+    gelten als Originalkarten der Störtebeker Festspiele und berechtigen zum Einlass.
+</p>
+<p>
+    Der Erwerb von Eintrittskarten über nicht autorisierte Anbieter – insbesondere über
+    Internetplattformen wie eBay, Viagogo oder vergleichbare Portale – erfolgt auf eigenes
+    Risiko des Käufers. Die Störtebeker Festspiele übernehmen keine Haftung für Gültigkeit,
+    Echtheit, Preisgestaltung oder sonstige Umstände im Zusammenhang mit solchen Karten.
+</p>
+<p>
+    Das offizielle Preisgefüge der Störtebeker Festspiele ergibt sich ausschließlich aus den
+    Preisen, die auf www.stoertebeker.de oder bei den autorisierten Vorverkaufsstellen
+    angegeben sind. Abweichende Preisangebote anderer Anbieter stehen in keinemZusammenhang mit der Preisgestaltung der Störtebeker Festspiele und sind nicht vom
+    Veranstalter autorisiert oder beeinflusst.
+</p>
+<p>
+    <strong>10.1 Umtausch oder Rücknahme von Eintrittskarten oder Gutscheinen</strong>
+</p>
+<p>
+    Verkaufte Eintrittskarten oder Gutscheine nehmen wir (außer in Fällen von Ziffer 9.2)
+    grundsätzlich nicht zurück und tauschen sie auch nicht um. Ebenso wenig leisten wir
+    Ersatz für nicht in Anspruch genommene Plätze, es sei denn, die Gründe sind von uns zu
+    vertreten. Ein verspäteter Vorstellungsbeginn oder Änderungen in der Besetzung
+    berechtigen nur dann zur Rückgabe der Eintrittskarten und Erstattung der Kosten, wenn
+    diese Ereignisse von uns zu vertreten und von wesentlicher Bedeutung sind.
+</p>
+<p>
+    <strong>10.2 Weitergabe von Eintrittskarten</strong>
+</p>
+<p>
+    Die Weitergabe von Eintrittskarten an Dritte erfolgt auf eigenes Risiko des Käufers.
+    Eintrittskarten können durch den Veranstalter entwertet werden, wenn sie unrechtmäßig
+    weitergegeben oder vervielfältigt wurden. In einem solchen Fall erlischt der Anspruch auf
+    den ursprünglich gebuchten Sitzplatz sowie auf den Veranstaltungsbesuch. Der Veranstalter
+    übernimmt keine Haftung für Schäden, die durch den Erwerb entwerteter oder gefälschter
+    Karten entstehen.
+</p>
+<h2>
+    11. Änderungen, Abbruch oder Absage einer Vorstellung
+</h2>
+<p>
+    <strong>11.1 </strong>Wir behalten uns das Recht vor, Teile der Vorstellung zu verändern, nämlich dann, wenn
+    ein Künstler ausfällt (bspw. durch Krankheit), oder die Änderung technisch oder personell
+    oder aus Sicherheitsgründen notwendig ist. Solange die Änderung nicht von uns zu
+    vertreten und/oder nicht wesentlich und Ihnen zumutbar ist, haben Sie kein Recht,
+    deswegen den Preis zu mindern oder vom Kartenkauf zurückzutreten.
+</p>
+<p>
+    <strong>11.2 </strong>Wir spielen grundsätzlich auch bei schlechtem Wetter und Regen! Müssen wir die
+    Vorstellung abbrechen, ohne dass wir dies zu vertreten haben, können Sie nur dann Ihren
+    Eintrittspreis erstattet verlangen, wenn der Abbruch noch vor der Pause erfolgte. Ihren
+    Anspruch müssen Sie dann innerhalb eines Jahres seit dem Vorstellungsdatum schriftlich
+    mit Vorlage der Eintrittskarten geltend machen.
+</p>
+<p>
+    <strong>11.3</strong> Wir behalten uns eine Absage für Fälle höherer Gewalt (insbesondere
+    Naturkatastrophen, Sabotage, Streik, Verkehrsunfälle, Krieg, Terrorismus, einschließlich der
+    behördlich/polizeilich angeordneten oder empfohlenen oder aus unserem pflichtgemäßen
+    Ermessen beschlossenen Absage wegen Terrordrohungen oder -vermutungen oder der
+    Verbreitung von Seuchen oder Epidemien), oder auch aus Gründen der Pietät vor.
+    Pietätsgründe sind gegeben, wenn zumindest auch in der Region Ralswiek Trauerbeflaggung
+    angeordnet ist oder vorgenommen wird oder sie bevorsteht, oder wenn ein schwerer Unfall
+    bzw. Unglück innerhalb von 24 Stunden vor Veranstaltungsbeginn geschieht, über das in der
+    Region Ralswiek in der überwiegenden Anzahl der Medien berichtet wird, oder wenn der
+    Vorfall vor mehr als 24 Stunden geschehen ist, aber die Berichterstattung in der
+    überwiegenden Anzahl der Medien durch Sondersendungen noch präsent ist, oder wenn
+    vergleichbare Veranstaltungen aufgrund desselben Vorfalls abgesagt werden.
+</p>
+<p>
+    <strong>11.4</strong> Müssen wir eine Vorstellung absagen, so bieten wir Ihnen nach Verfügbarkeit alternative
+    Plätze zu anderen Terminen an. Wollen oder können Sie keinen anderen Termin
+    wahrnehmen, erstatten wir Ihnen den Eintrittspreis. System- und Bearbeitungsgebühren
+    erstatten wir nicht, es sei denn, die Absage ist von uns zu vertreten. Ihren Anspruch müssen
+    Sie innerhalb eines Jahres seit dem Vorstellungsdatum schriftlich mit Vorlage der
+    Eintrittskarten geltend machen. Danach ist eine Erstattung ausgeschlossen. Weitere
+    Schadensersatzansprüche sind ausgeschlossen, sofern nicht von uns zu vertreten.
+</p>
+<h2>
+    12. Hausordnung
+</h2>
+<p>
+    <strong>12.1 </strong>Mit der Anerkennung der AGB wird auch die jeweils gültige Fassung der Hausordnung
+    der Störtebeker Festspiele anerkannt.
+</p>
+<h2>
+    13. Bild- und Tonaufnahmen
+</h2>
+<p>
+    <strong>13.1.</strong> Bild und/oder Tonaufnahmen jeglicher Art regelt die Hausordnung
+</p>
+<p>
+    <strong>13.2</strong> Wir (oder von uns hierzu ermächtigte Dritte) erstellen während der Vorstellung ggf.
+    Bild- und/oder Tonaufnahmen und veröffentlichen diese auf unseren Internetpräsenzen
+    (Homepage und Social Media) und zu Eigenwerbezwecken, unter Umständen aber auch zu
+    kommerziellen Zwecken Dritter (z.B. Fernsehaufzeichnungen). Sie erklären mit dem Kauf
+    der Eintrittskarten (auch für Ihre Kinder) und jeder Besucher erklärt mit Betreten des
+    Veranstaltungsgeländes sein Einverständnis (auch für seine Kinder), dass ggf. Bild- und/oder
+    Tonaufnahmen auch von ihnen erstellt und veröffentlicht und ohne zeitliche, räumliche und
+    inhaltliche Beschränkung insbesondere verbreitet, gesendet und öffentlich zugänglich
+    gemacht werden können. Die Einwilligung erfolgt ausdrücklich unter Verzicht auf einen
+    Vergütungsanspruch.
+</p>
+<p>
+    Derzeit präsentieren wir uns auf folgenden Onlinekanälen:
+</p>
+<p>
+    www.stoertebeker.de
+    www.instagram.com/stoertebekerfestspiele
+    www.facebook.com/stoertebekerfestspiele
+    www.tiktok.com/@stoertebekerfestspiele
+    www.youtube.com/user/stoertebekerfestspie
+    www.twitter.com/stoertebekerDE
+</p>
+<h2>
+    14. Haftung
+</h2>
+<p>
+    <strong>14.1</strong> Wir haften für alle Schäden, die wir oder unsere gesetzlichen Vertreter oder
+    Erfüllungsgehilfen vorsätzlich oder grob fahrlässig verursacht haben, nach den gesetzlichen
+    Bestimmungen.
+    <strong>14.2</strong> Wir haften nicht für von uns aufgrund leichter Fahrlässigkeit verursachte Schäden, es
+    sei denn, wir haben dabei eine wesentliche Vertragspflicht, das heißt, eine Pflicht, deren
+    Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und
+    auf deren Einhaltung Sie regelmäßig vertrauen dürfen, verletzt. Die Haftung ist in diesem
+    Fall jedoch auf den Schaden begrenzt, mit dessen Entstehen wir nach den bei
+    Vertragsabschluss bekannten Umständen typischerweise rechnen mussten.
+    <strong>14.3</strong> Die vorstehenden Haftungsbeschränkungen gelten nicht bei Verletzung von Leben,
+    Körper und Gesundheit, bei arglistig verschwiegenen Mängeln sowie bei gesetzlich
+    vorgeschriebener verschuldensunabhängiger Haftung (z. B. aus Garantie oder nach dem
+    Produkthaftungsgesetz).
+    <strong>14.4</strong> Soweit unsere Haftung ausgeschlossen oder beschränkt ist, gilt dies auch für die
+    Haftung unserer gesetzlichen Vertreter oder Erfüllungsgehilfen.
+</p>
+<h2>
+    15. Anwendbares Recht und Gerichtsstand und Streitbeilegungsverfahren
+</h2>
+<p>
+    <strong>15.1</strong> Es gilt deutsches Recht unter Ausschluss des UN-Kaufrechts (CISG). Soweit Sie keinen
+    allgemeinen Gerichtsstand im Inland haben oder als Kaufmann, Vertreter einer juristischen
+    Person des öffentlichen Rechts oder Vertreter öffentlich-rechtlichen Sondervermögens
+    handeln, ist Stralsund Gerichtsstand.
+    <strong>15.2</strong> Die europäische Kommission hat eine Plattform zur Online-Streitbeilegung unter
+    folgendem Link bereitgestellt:https://ec.europa.eu/consumers/odr/
+    Wir sind zu dieser Angabe rechtlich verpflichtet, beteiligen uns jedoch nicht an dieser Art
+    der Streitbeilegung.
+    <strong>15.2</strong> Sollte eine Bestimmung dieser Allgemeinen Geschäftsbedingungen unwirksam sein, so
+    wird dadurch die Wirksamkeit der übrigen Bestimmungen nicht berührt.
+    &nbsp;
+</p>
+                </div>
+                
+            </div>
+        </section>
+
+   
+ 
+
+ 
+    <div class="h-12"></div>
+</TicketShopLayout>

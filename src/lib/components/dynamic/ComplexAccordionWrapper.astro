@@ -1,0 +1,50 @@
+---
+import type { Block } from "../../interfaces/page";
+import { Markup } from "react-render-markup";
+import ComplexAccordion from "./sub/ComplexAccordion";
+import AccordionSectionEntry from "../content/sub/AccordionSectionEntry";
+
+interface Props {
+  data: Block;
+  padding: string;
+}
+
+const { data, padding } = Astro.props;
+const { blocks, componentSettings, id, __component } = data;
+const placeholderBlock = blocks[0];
+---
+
+<div id={componentSettings?.anchorId} class="overflow-x-clip">
+  <ComplexAccordion client:only="react" data={data as any} padding={padding} />
+
+  <section
+    id={data.componentSettings?.anchorId}
+    class={`max-w-[2000px] text-start mx-auto ${padding} ${data.componentSettings?.classes}`}
+    placeholder-id={`complex-accordion-${id}`}
+  >
+    <div class="flex flex-col lg:flex-row gap-4 bg-primary-500 p-1 rounded-lg mb-12 lg:mb-20">
+      {
+        blocks.map((b: any, idx: number) => (
+          <div
+            class={`w-full flex justify-center items-center gap-4 px-12 py-3 rounded-lg hover:cursor-pointer ${idx === 0 ? "bg-white text-neutral-900" : "bg-transparent text-white"}`}
+          >
+            <h3 class="xl:text-lg text-center">{b.label}</h3>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="space-y-6" id="accordion-collapse" data-accordion="collapse">
+      {
+        placeholderBlock.blocks.map((b: any, idx: number) => (
+          <AccordionSectionEntry
+            block={b}
+            index={idx}
+            cid={id}
+            __component={__component}
+          />
+        ))
+      }
+    </div>
+  </section>
+</div>

@@ -1,0 +1,244 @@
+---
+import { Markup } from "react-render-markup";
+import TicketShopLayout from "../../layouts/TicketShopLayout.astro";
+import { PageType } from "../../lib/interfaces/page";
+import Footer from "../../components/ticketshop/components/Footer";
+import NavContact from "../../components/base/NavContact.astro";
+import TitleText from "../../components/ticketshop/components/TitleText";
+import CornerBorderedContainer from "../../components/ticketshop/components/CornerBorderedContainer";
+import TitleTextBasic from "../../components/ticketshop/components/TitleTextBasic";
+
+const metatitle = "Datenschutz - Störtebeker Festspiele";
+const metadescription = "Hier finden Sie die Datenschutzerklärung für den Ticketshop der Störtebeker Festspiele";
+
+let componentContentPadding = "px-6 md:px-16 xl:px-20 pb-6 md:pb-16 xl:pb-20";
+
+
+---
+
+<TicketShopLayout
+    title={metatitle}
+    description={metadescription}
+    slug="kontakt"
+    pageType={PageType.tickets}
+    locale="de"
+    langSwitch={[{ locale: "en", slug: "tickets" }]}
+	footerType="base"
+>
+    <!-- <NavContact locale="de" /> -->
+    <section class={`bigHeaderBackgroundContainer`}>
+        <img src="/images/contact.jpg" alt="Kontakt" class="w-full h-full object-cover" />
+    </section>
+    <section class={`max-w-screen-2xl mx-auto w-full ${componentContentPadding}`}>
+            <div class='w-full'>
+                
+                <div class='markup'>
+                <h1 class="mt-12 mb-12 lg:mt-24">Datenschutzerklärung</h1>
+                </div>
+            </div>
+            <div class="w-full mt-8">
+                <div class='markup'>
+                <p><strong>Datenerhebung:</strong></p>
+
+<ul>
+	<li>Informationen &uuml;ber den Browsertyp und die verwendete Version</li>
+	<li>Das Betriebssystem des Nutzers</li>
+	<li>Den Internet-Service-Provider des Nutzers</li>
+	<li>Die IP-Adresse des Nutzers</li>
+	<li>Datum und Uhrzeit des Zugriffs</li>
+	<li>Websites, von denen das System des Nutzers auf unsere Internetseite gelangt</li>
+	<li>Websites, die vom System des Nutzers &uuml;ber unsere Website aufgerufen werden</li>
+</ul>
+
+<p>Die Software l&auml;uft dabei ausschlie&szlig;lich auf den Servern unserer Webseite. Eine Speicherung der personenbezogenen Daten der Nutzer findet nur dort statt. Eine Weitergabe der Daten an Dritte erfolgt nicht.</p>
+<p>Wir erheben Ihre Kontakt- und Adressdaten, wenn Sie &uuml;ber unseren Ticketshop buchen. Auch verarbeiten wir die Zahlungsdaten f&uuml;r den von Ihnen gew&auml;hlten Zahlungsvorgang.</p>
+
+<p><strong>Matomo</strong></p>
+<p>Darüber hinaus nutzen wir auf unserer Website das Software-Tool Matomo zur Analyse des Surfverhaltens unserer Nutzer. 
+Mit Hilfe von Matomo sind wir in der Lage Daten über die Nutzung unserer Website durch die Websitebesucher zu erfassen und zu analysieren. Hierdurch können wir u. a. herausfinden, wann welche Seitenaufrufe getätigt wurden und aus welcher Region sie kommen. Außerdem erfassen wir verschiedene Logdateien (z. B. IP-Adresse, Referrer, verwendete Browser und Betriebssysteme) und können messen, ob unsere Websitebesucher bestimmte Aktionen durchführen (z. B. Klicks, Käufe u. Ä.).
+</p>
+<p>
+	Die Nutzung dieses Analyse-Tools erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der Analyse des Nutzerverhaltens, um sowohl sein Webangebot als auch seine Werbung zu optimieren. Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B. Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung ist jederzeit widerrufbar.
+</p>
+<p>
+Bei der Analyse mit Matomo setzen wir IP-Anonymisierung ein. Hierbei wird Ihre IP-Adresse vor der Analyse gekürzt, sodass Sie Ihnen nicht mehr eindeutig zuordenbar ist. Wir hosten Matomo ausschließlich auf unseren eigenen Servern, sodass alle Analysedaten bei uns verbleiben und nicht weitergegeben werden.
+</p>
+
+
+<p><strong>a. verantwortliche Stelle</strong><br />
+St&ouml;rtebeker Festspiele GmbH &amp; Co KG<br />
+Am Bodden 100<br />
+18528 Ralswiek / Insel R&uuml;gen</p>
+
+<p><strong>b. Datenschutzbeauftragter</strong><br />
+RAin Beata Hubrig<br />
+Gaudystra&szlig;e 6<br />
+10437 Berlin<br />
+mail@kanzlei-hubrig.de<br />
+030/81038776</p>
+
+<p><strong>c. Zweck der Verarbeitung</strong></p>
+
+<p>Die vor&uuml;bergehende Speicherung der IP-Adresse durch das System ist notwendig, um eine Auslieferung der Website an den Rechner des Nutzers zu erm&ouml;glichen. Hierf&uuml;r muss die IPAdresse des Nutzers f&uuml;r die Dauer der Sitzung gespeichert bleiben.</p>
+
+<p>Zudem dienen uns die Daten zur Optimierung der Website und zur Sicherstellung der Sicherheit unserer informationstechnischen Systeme. Eine Auswertung der Daten zu Marketingzwecken findet in diesem Zusammenhang nicht statt.</p>
+
+<p>In diesen Zwecken liegt auch unser berechtigtes Interesse an der Datenverarbeitung nach Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+<p>Die Kundendaten werden zum Zwecke des Vertragesverh&auml;ltnisses verarbeitet.</p>
+
+<p><strong>d. Rechtsgrundlage</strong></p>
+
+<p><strong>Rechtsgrundlage f&uuml;r die Webanalyse:</strong></p>
+
+<p>Ist die Verarbeitung zur Wahrung eines berechtigten Interesses unseres Unternehmens oder eines Dritten erforderlich und &uuml;berwiegen die Interessen, Grundrechte und Grundfreiheiten des Betroffenen das erstgenannte Interesse nicht, so dient Art. 6 Abs. 1 lit. f DSGVO als Rechtsgrundlage f&uuml;r die Verarbeitung.</p>
+
+<p><strong>Rechtsgrundlage f&uuml;r Kundendaten:</strong></p>
+
+<p>F&uuml;r die Begr&uuml;ndung und Durchf&uuml;hrung der Vertr&auml;ge ist die Datenverarbeitung gem&auml;&szlig; Art. 6 Abs. 1 lit. b DSGVO die Erlaubnisnorm.</p>
+
+<p><strong>e. Empf&auml;nger</strong></p>
+
+<p>Die Zahlungsdaten werden ans Finanzamt &uuml;bermittelt. Die Bezahlvorg&auml;nge werden mithilfe von</p>
+
+<p>Adyen N.V.<br />
+Simon Carmiggeltstraat 6,<br />
+1011 DJ Amsterdam<br />
+The Netherlands</p>
+
+
+<p>abgewickelt. Die &Uuml;bertragung der Daten ist &uuml;ber eine SSL-Verschl&uuml;sselung gesichert.</p>
+
+<p><strong>f. Kein Drittlandstransfer</strong></p>
+
+<p><strong>g. Speicherdauer</strong></p>
+
+<p>Die Daten werden gel&ouml;scht, sobald sie f&uuml;r die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind. Im Falle der Erfassung der Daten zur Bereitstellung der Website ist dies der Fall, wenn die jeweilige Sitzung beendet ist.</p>
+
+<p>Im Falle der Speicherung der Daten in Logfiles ist dies nach sp&auml;testens sieben Tagen der Fall. Eine dar&uuml;ber hinausgehende Speicherung ist m&ouml;glich. In diesem Fall werden die IP-Adressen der Nutzer gel&ouml;scht oder verfremdet, sodass eine Zuordnung des aufrufenden Clients nicht mehr m&ouml;glich ist.</p>
+
+<p>Die Kundendaten aus dem Ticketsystem werden zehn Jahre f&uuml;r buchhalterische Zwecke aufbewahrt.</p>
+
+<p><strong>h. Rechte</strong></p>
+
+<p><strong>Auskunftsrecht</strong></p>
+
+<p>Sie k&ouml;nnen von uns eine Best&auml;tigung dar&uuml;ber verlangen, ob personenbezogene Daten, die Sie betreffen, von uns verarbeitet werden. Liegt eine solche Verarbeitung vor, k&ouml;nnen Sie von uns folgende Informationen Auskunft verlangen:</p>
+
+<ol>
+	<li>die Zwecke, zu denen die personenbezogenen Daten verarbeitet werden;</li>
+	<li>die Kategorien von personenbezogenen Daten, welche verarbeitet werden;</li>
+	<li>die Empf&auml;nger bzw. die Kategorien von Empf&auml;ngern, gegen&uuml;ber denen Ihre personenbezogenen Daten offengelegt wurden oder noch offengelegt werden;</li>
+	<li>die geplante Dauer der Speicherung Ihrer personenbezogenen Daten oder, falls konkrete Angaben hierzu nicht m&ouml;glich sind, Kriterien f&uuml;r die Festlegung der Speicherdauer;</li>
+	<li>das Bestehen eines Rechts auf Berichtigung oder L&ouml;schung der Ihrer personenbezogenen Daten, eines Rechts auf Einschr&auml;nkung der Verarbeitung durch den Verantwortlichen oder eines Widerspruchsrechts gegen diese Verarbeitung;</li>
+	<li>das Bestehen eines Beschwerderechts bei einer Aufsichtsbeh&ouml;rde;</li>
+	<li>alle verf&uuml;gbaren Informationen &uuml;ber die Herkunft der Daten, wenn die personenbezogenen Daten nicht bei der betroffenen Person erhoben werden;</li>
+	<li>das Bestehen einer automatisierten Entscheidungsfindung einschlie&szlig;lich Profiling gem&auml;&szlig; Art. 22 Abs. 1 und 4 DSGVO und &ndash; zumindest in diesen F&auml;llen &ndash; aussagekr&auml;ftige Informationen &uuml;ber die involvierte Logik sowie die Tragweite und die angestrebten Auswirkungen einer derartigen Verarbeitung f&uuml;r die betroffene Person.</li>
+</ol>
+
+<p>Ihnen steht das Recht zu, Auskunft dar&uuml;ber zu verlangen, ob Ihre personenbezogenen Daten in ein Drittland oder an eine internationale Organisation &uuml;bermittelt werden. In diesem Zusammenhang k&ouml;nnen Sie verlangen, dass Sie &uuml;ber die geeigneten Garantien gem. Art. 46 DSGVO im Zusammenhang mit der &Uuml;bermittlung unterrichtet zu werdet.</p>
+
+<p>Sie haben ein Recht auf Berichtigung und/oder Vervollst&auml;ndigung uns gegen&uuml;ber, falls Ihre personenbezogenen Daten unrichtig oder unvollst&auml;ndig sind. Wir m&uuml;ssen die Berichtigung unverz&uuml;glich vorzunehmen.</p>
+
+<p><strong>Recht auf Einschr&auml;nkung der Verarbeitung</strong></p>
+
+<p>Unter den folgenden Voraussetzungen k&ouml;nnen Sie die Einschr&auml;nkung der Verarbeitung Ihrer personenbezogenen Daten verlangen:</p>
+
+<ol>
+	<li>wenn Sie die Richtigkeit Ihrer personenbezogenen f&uuml;r eine Dauer bestreiten, die es dem Verantwortlichen erm&ouml;glicht, die Richtigkeit der personenbezogenen Daten zu &uuml;berpr&uuml;fen;</li>
+	<li>die Verarbeitung unrechtm&auml;&szlig;ig ist und ihr die L&ouml;schung der personenbezogenen Daten ablehnt und stattdessen die Einschr&auml;nkung der Nutzung der personenbezogenen Daten verlangen;</li>
+	<li>wir die personenbezogenen Daten f&uuml;r die Zwecke der Verarbeitung nicht l&auml;nger ben&ouml;tigt, Sie diese jedoch zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen ben&ouml;tigen, oder</li>
+	<li>wenn Sie Widerspruch gegen die Verarbeitung gem&auml;&szlig; Art. 21 Abs. 1 DSGVO eingelegt haben und noch nicht feststeht, ob unsere berechtigten Gr&uuml;nde gegen&uuml;ber Ihren Gr&uuml;nden &uuml;berwiegen.</li>
+</ol>
+
+<p>Wurde die Verarbeitung Ihrer personenbezogenen Daten eingeschr&auml;nkt, d&uuml;rfen diese Daten &ndash; von ihrer Speicherung abgesehen &ndash; nur mit Ihrer Einwilligung oder zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen oder zum Schutz der Rechte einer anderen nat&uuml;rlichen oder juristischen Person oder aus Gr&uuml;nden eines wichtigen &ouml;ffentlichen Interesses der Union oder eines Mitgliedstaats verarbeitet werden.</p>
+
+<p>Wurde die Einschr&auml;nkung der Verarbeitung nach den o.g. Voraussetzungen eingeschr&auml;nkt, werden Sie von uns unterrichtet bevor die Einschr&auml;nkung aufgehoben wird.</p>
+
+<p><strong>Recht auf L&ouml;schung</strong></p>
+
+<p>Sie k&ouml;nnen von uns verlangen, dass Ihre personenbezogenen Daten unverz&uuml;glich gel&ouml;scht werden, und wir sind verpflichtet, diese Daten unverz&uuml;glich zu l&ouml;schen, sofern einer der folgenden Gr&uuml;nde zutrifft:</p>
+
+<ol>
+	<li>Die personenbezogenen Daten sind f&uuml;r die Zwecke, f&uuml;r die sie erhoben oder auf sonstige Weise verarbeitet wurden, nicht mehr notwendig.</li>
+	<li>Sie widerrufen Ihre Einwilligung, auf die sich die Verarbeitung gem. Art. 6 Abs. 1 lit. a oder Art. 9 Abs. 2 lit. a DSGVO st&uuml;tzte, und es fehlt an einer anderweitigen Rechtsgrundlage f&uuml;r die Verarbeitung.</li>
+	<li>Sie legen gem. Art. 21 Abs. 1 DSGVO Widerspruch gegen die Verarbeitung ein und es liegen keine vorrangigen berechtigten Gr&uuml;nde f&uuml;r die Verarbeitung vor, oder Sie legen gem. Art. 21 Abs. 2 DSGVO Widerspruch gegen die Verarbeitung ein.</li>
+	<li>Die personenbezogenen Daten wurden unrechtm&auml;&szlig;ig verarbeitet.</li>
+	<li>Die L&ouml;schung Ihrer personenbezogenen Daten ist zur Erf&uuml;llung einer rechtlichen Verpflichtung nach dem Unionsrecht oder dem Recht der Mitgliedstaaten erforderlich, dem der Verantwortliche unterliegt.</li>
+	<li>Die personenbezogenen Daten wurden in Bezug auf angebotene Dienste der Informationsgesellschaft gem&auml;&szlig; Art. 8 Abs. 1 DSGVO erhoben.</li>
+</ol>
+
+<p><strong>Information an Dritte</strong></p>
+
+<p>Haben wir Ihre personenbezogenen Daten &ouml;ffentlich gemacht und sind wir gem. Art. 17 Abs. 1 DSGVO zu deren L&ouml;schung verpflichtet, so treffen wir unter Ber&uuml;cksichtigung der verf&uuml;gbaren Technologie und der Implementierungskosten angemessene Ma&szlig;nahmen, auch technischer Art, um f&uuml;r die Datenverarbeitung Verantwortliche, die die personenbezogenen Daten verarbeiten, dar&uuml;ber zu informieren, dass Sie als betroffene Person von ihnen die L&ouml;schung aller Links zu diesen personenbezogenen Daten oder von Kopien oder Replikationen dieser personenbezogenen Daten verlangt haben.</p>
+
+<p><strong>Ausnahmen</strong></p>
+
+<p>Das Recht auf L&ouml;schung besteht nicht, soweit die Verarbeitung erforderlich ist</p>
+
+<ol>
+	<li>zur Aus&uuml;bung des Rechts auf freie Meinungs&auml;u&szlig;erung und Information;</li>
+	<li>zur Erf&uuml;llung einer rechtlichen Verpflichtung, die die Verarbeitung nach dem Recht der Union oder der Mitgliedstaaten, dem der Verantwortliche unterliegt, erfordert, oder zur Wahrnehmung einer Aufgabe, die im &ouml;ffentlichen Interesse liegt oder in Aus&uuml;bung &ouml;ffentlicher Gewalt erfolgt, die dem Verantwortlichen &uuml;bertragen wurde;</li>
+	<li>aus Gr&uuml;nden des &ouml;ffentlichen Interesses im Bereich der &ouml;ffentlichen Gesundheit gem&auml;&szlig; Art. 9 Abs. 2 lit. h und i sowie Art. 9 Abs. 3 DSGVO;</li>
+	<li>f&uuml;r im &ouml;ffentlichen Interesse liegende Archivzwecke, wissenschaftliche oder historische Forschungszwecke oder f&uuml;r statistische Zwecke gem. Art. 89 Abs. 1 DSGVO, soweit das unter Abschnitt a) genannte Recht voraussichtlich die Verwirklichung der Ziele dieser Verarbeitung unm&ouml;glich macht oder ernsthaft beeintr&auml;chtigt, oder</li>
+	<li>zur Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen.</li>
+</ol>
+
+<p><strong>Recht auf Unterrichtung</strong></p>
+
+<p>Haben Sie das Recht auf Berichtigung, L&ouml;schung oder Einschr&auml;nkung der Verarbeitung uns gegen&uuml;ber geltend gemacht, sind wir verpflichtet, allen Empf&auml;ngern, denen Ihre personenbezogenen Daten offengelegt wurden, diese Berichtigung oder L&ouml;schung der Daten oder Einschr&auml;nkung der Verarbeitung mitzuteilen, es sei denn, dies erweist sich als unm&ouml;glich oder ist mit einem unverh&auml;ltnism&auml;&szlig;igen Aufwand verbunden.</p>
+
+<p>Ihnen steht uns gegen&uuml;ber das Recht zu, &uuml;ber diese Empf&auml;nger unterrichtet zu werden.</p>
+
+<p><strong>Recht auf Daten&uuml;bertragung</strong></p>
+
+<p>Sie haben das Recht, Ihre personenbezogenen Daten, die Sie uns bereitgestellt haben, in einem strukturierten, g&auml;ngigen und maschinenlesbaren Format zu erhalten. Au&szlig;erdem haben Sie das Recht, diese Daten einem anderen Verantwortlichen ohne Behinderung durch uns zu &uuml;bermitteln, sofern</p>
+
+<ol>
+	<li>die Verarbeitung auf einer Einwilligung gem. Art. 6 Abs. 1 lit. a DSGVO oder Art. 9 Abs. 2 lit. a DSGVO oder auf einem Vertrag gem. Art. 6 Abs. 1 lit. b DSGVO beruht und</li>
+	<li>die Verarbeitung mithilfe automatisierter Verfahren erfolgt.</li>
+</ol>
+
+<p>In Aus&uuml;bung dieses Rechts haben Sie ferner das Recht, zu erwirken, dass Ihre personenbezogenen Daten direkt von uns einem anderen Verantwortlichen &uuml;bermittelt werden, soweit dies technisch machbar ist. Freiheiten und Rechte anderer Personen d&uuml;rfen hierdurch nicht beeintr&auml;chtigt werden.</p>
+
+<p>Das Recht auf Daten&uuml;bertragbarkeit gilt nicht f&uuml;r eine Verarbeitung personenbezogener Daten, die f&uuml;r die Wahrnehmung einer Aufgabe erforderlich ist, die im &ouml;ffentlichen Interesse liegt oder in Aus&uuml;bung &ouml;ffentlicher Gewalt erfolgt, die dem Verantwortlichen &uuml;bertragen wurde.</p>
+
+<p><strong>i. Widerrufsrecht bzgl. der Einwilligung</strong></p>
+
+<p>Cookies werden auf Ihren Rechner gespeichert und von diesem an unsere Seite &uuml;bermittelt. Daher haben Sie auch die volle Kontrolle &uuml;ber die Verwendung von Cookies. Durch eine &Auml;nderung der Einstellungen in Ihren Browser k&ouml;nnen Sie die &Uuml;bertragung von Cookies deaktivieren oder einschr&auml;nken. Bereits gespeicherte Cookies k&ouml;nnen jederzeit gel&ouml;scht werden. Dies kann auch automatisiert erfolgen. Werden Cookies f&uuml;r unsere Website deaktiviert, k&ouml;nnen m&ouml;glicherweise nicht mehr alle Funktionen der Website vollumf&auml;nglich genutzt werden.</p>
+
+<p>Google Analytics</p>
+
+<p>Auf Grundlage unserer berechtigten Interessen (d.h. Interesse an der Analyse, Optimierung und wirtschaftlichem Betrieb unseres Onlineangebotes im Sinne des Art. 6 Abs. 1 lit. f. DSGVO) setzen wir Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland (&bdquo;Google&ldquo;) ein. Google verwendet Cookies. Die durch das Cookie erzeugten Informationen &uuml;ber Benutzung des Onlineangebotes durch die Nutzer werden in der Regel an einen Server von Google in den USA &uuml;bertragen und dort gespeichert.</p>
+
+<p>Google ist unter dem Privacy-Shield-Abkommen zertifiziert und bietet hierdurch eine Garantie, das europ&auml;ische Datenschutzrecht einzuhalten (<a href="https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&amp;status=Active" target="_blank">https://www.privacyshield.gov/participant?id=a2zt000000001L5AAI&amp;status=Active</a>). Google wird diese Informationen in unserem Auftrag benutzen, um die Nutzung unseres Onlineangebotes durch die Nutzer auszuwerten, um Reports &uuml;ber die Aktivit&auml;ten innerhalb dieses Onlineangebotes zusammenzustellen und um weitere, mit der Nutzung dieses Onlineangebotes und der Internetnutzung verbundene Dienstleistungen, uns gegen&uuml;ber zu erbringen. Dabei k&ouml;nnen aus den verarbeiteten Daten pseudonyme Nutzungsprofile der Nutzer erstellt werden.</p>
+
+<p>Wir setzen Google Analytics nur mit aktivierter IP-Anonymisierung ein. Als Nutzer k&ouml;nnen Sie die Speicherung der Cookies durch Einstellung Ihrer Browser-Software verhindern. Sie k&ouml;nnen dar&uuml;ber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung des Onlineangebotes bezogenen Daten an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem Sie folgendes Browser-Plugin herunterladen und installieren: <a href="http://tools.google.com/dlpage/gaoptout?hl=de" target="_blank">http://tools.google.com/dlpage/gaoptout?hl=de</a>. Die personenbezogenen Daten der Nutzer werden nach 14 Monaten gel&ouml;scht oder anonymisiert. Weitere Informationen zur Datennutzung durch Google, Einstellungs- und Widerspruchsm&ouml;glichkeiten, erfahren Sie in der Datenschutzerkl&auml;rung von Google (<a href="https://policies.google.com/technologies/ads" target="_blank">https://policies.google.com/technologies/ads</a>) sowie in den Einstellungen f&uuml;r die Darstellung von Werbeeinblendungen durch Google (<a href="https://adssettings.google.com/authenticated" target="_blank">https://adssettings.google.com/authenticated</a>).</p>
+
+<p>Alternativ zum Browser-Add-On oder innerhalb von Browsern auf mobilen Ger&auml;ten, klicken Sie bitte diesen Link, um die Erfassung durch Google Analytics innerhalb dieser Website zuk&uuml;nftig zu verhindern: Analytics-Opt-Out Dabei wird ein Opt-Out-Cookie auf Ihrem Ger&auml;t abgelegt. L&ouml;schen Sie Ihre Cookies, m&uuml;ssen Sie diesen Link erneut klicken.</p>
+
+<p>Sie haben das Recht, aus Gr&uuml;nden, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Ihrer personenbezogenen Daten, die aufgrund von Art. 6 Abs. 1 lit. f DSGVO erfolgt, Widerspruch einzulegen. Wir verarbeiten Ihre personenbezogenen Daten in diesem Fall nicht mehr, es sei denn, wir k&ouml;nnen zwingende schutzw&uuml;rdige Gr&uuml;nde f&uuml;r die Verarbeitung nachweisen, die Ihren Interessen, Rechte und Freiheiten &uuml;berwiegen, oder die Verarbeitung dient der Geltendmachung, Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen.</p>
+
+<p><strong>j. Beschwerderecht bei der Aufsichtsbeh&ouml;rde</strong></p>
+
+<p>Wenn Sie der Ansicht sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verst&ouml;&szlig;t, haben Sie ein Beschwerderecht bei der f&uuml;r uns zust&auml;ndigen Aufsichtsbeh&ouml;rde:</p>
+
+<p style="text-align:center">Der Landesbeauftragte f&uuml;r Datenschutz und Informationsfreiheit Mecklenburg-Vorpommern<br />
+Werderstra&szlig;e 74A<br />
+19055 Schwerin<br />
+Mecklenburg-Vorpommern<br />
+Deutschland<br />
+E-Mail: info@datenschutz-mv.de</p>
+
+<p>Die Aufsichtsbeh&ouml;rde, bei der die Beschwerde eingereicht wurde, unterrichtet Sie &uuml;ber den Stand und die Ergebnisse der Beschwerde einschlie&szlig;lich der M&ouml;glichkeit eines gerichtlichen Rechtsbehelfs nach Art. 78 DSGVO.</p>
+                </div>
+                
+            </div>
+        </section>
+
+   
+ 
+
+ 
+    <div class="h-12"></div>
+</TicketShopLayout>

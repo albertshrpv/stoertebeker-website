@@ -1,0 +1,300 @@
+---
+import "../styles/global.css";
+import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
+import Nav from "../components/base/Nav.astro";
+import Footer from "../components/base/Footer.astro";
+import "../../node_modules/vanilla-cookieconsent/dist/cookieconsent.css";
+import { PageType } from "../lib/interfaces/page";
+import ScrollToTopBtn from "../components/base/ScrollToTopBtn.astro";
+
+export interface LangSwitch {
+  locale: string;
+  slug: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  pageType: PageType;
+  locale: string;
+  langSwitch: LangSwitch[];
+}
+
+const { title, description, slug, pageType = "page", locale, langSwitch } = Astro.props;
+const isDev = import.meta.env.DEV;
+---
+
+<!doctype html>
+<html lang="de" class="c_darkmode">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Störtebeker Tickets" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="canonical" href={`https://booking.stoertebeker.de/${locale}/${slug}`} />
+    <link rel="preload" href="/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/work-sans-latin-wght-italic.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/images/Maus.svg" as="image" type="image/svg+xml" />
+    <link rel="preload" href="/images/Maus2.svg" as="image" type="image/svg+xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Störtebeker Festspiele">
+    <meta property="og:title" content="Tickets & Gutscheine 2026 | Störtebeker Festspiele „Likedeeler“">
+    <meta property="og:description" content="Open-Air-Theater auf Rügen: 20.06.–05.09.2026. Tickets jetzt sichern!">
+    <meta property="og:url" content="https://booking.stoertebeker.de/">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:image" content="https://media.stoertebeker.de/images/2025-10-07-strtebeker-festspiele-2026-likedeeler-1e402b3f.jpg/800/80/webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tickets & Gutscheine 2026 | Störtebeker Festspiele „Likedeeler“">
+    <meta name="twitter:description" content="Erleben Sie das Open-Air-Abenteuer auf Rügen. Jetzt Tickets sichern!">
+    <meta name="twitter:image" content="https://media.stoertebeker.de/images/2025-10-07-strtebeker-festspiele-2026-likedeeler-1e402b3f.jpg/800/80/webp">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EventSeries",
+      "name": "Störtebeker Festspiele 2026 – „Likedeeler“",
+      "description": "Open-Air-Theater auf der Naturbühne Ralswiek. Sitzplatzwahl, Bestplatzbuchung und Familienpreise.",
+      "startDate": "2026-06-20",
+      "endDate": "2026-09-05",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "image": [
+        "https://media.stoertebeker.de/images/2025-10-07-strtebeker-festspiele-2026-likedeeler-1e402b3f.jpg/800/80/webp"
+      ],
+      "url": "https://booking.stoertebeker.de",
+      "location": {
+        "@type": "Place",
+        "name": "Naturbühne Ralswiek",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Am Bodden 1",
+          "addressLocality": "Ralswiek",
+          "postalCode": "18528",
+          "addressCountry": "DE"
+        }
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Störtebeker Festspiele GmbH & Co. KG",
+        "url": "https://www.stoertebeker.de"
+      },
+      "offers": [
+        {
+          "@type": "AggregateOffer",
+          "name": "Erwachsene",
+          "priceCurrency": "EUR",
+          "lowPrice": "22.00",
+          "highPrice": "50.00",
+          "availability": "https://schema.org/InStock",
+          "url": "https://booking.stoertebeker.de",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "PG I – Erwachsene",
+              "category": "Reihe 1–10 (nummeriert)",
+              "price": "50.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG II – Erwachsene",
+              "category": "Reihe 11–28 (nummeriert)",
+              "price": "47.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG III – Erwachsene",
+              "category": "Reihe 29–46 (nummeriert)",
+              "price": "44.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG IV – Erwachsene",
+              "category": "Reihe 47–63 (nummeriert)",
+              "price": "32.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG V – Erwachsene",
+              "category": "Reihe 64–76 (nummeriert)",
+              "price": "27.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG VI – Erwachsene",
+              "category": "Reihe 77–91 (nummeriert)",
+              "price": "22.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            }
+          ]
+        },
+        {
+          "@type": "AggregateOffer",
+          "name": "Kinder bis 15 Jahre",
+          "priceCurrency": "EUR",
+          "lowPrice": "12.00",
+          "highPrice": "40.00",
+          "availability": "https://schema.org/InStock",
+          "url": "https://booking.stoertebeker.de",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "PG I – Kinder",
+              "category": "Reihe 1–10 (nummeriert)",
+              "price": "40.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG II – Kinder",
+              "category": "Reihe 11–28 (nummeriert)",
+              "price": "37.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG III – Kinder",
+              "category": "Reihe 29–46 (nummeriert)",
+              "price": "34.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG IV – Kinder",
+              "category": "Reihe 47–63 (nummeriert)",
+              "price": "22.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG V – Kinder",
+              "category": "Reihe 64–76 (nummeriert)",
+              "price": "17.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "PG VI – Kinder",
+              "category": "Reihe 77–91 (nummeriert)",
+              "price": "12.00",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            }
+          ]
+        }
+      ],
+      "hasPart": [
+        {
+          "@type": "Event",
+          "name": "Adlershow (Vorveranstaltung)",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Naturbühne Ralswiek"
+          },
+          "isAccessibleForFree": false,
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Adlershow – Erwachsene",
+              "price": "11.50",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            },
+            {
+              "@type": "Offer",
+              "name": "Adlershow – Kinder bis 15 Jahre",
+              "price": "7.50",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://booking.stoertebeker.de"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <script is:inline type="text/plain" data-category="analytics">
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//stats.stoertebeker.de/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  </head>
+  <body>
+    <Nav locale={locale} />
+    <slot />
+    <ScrollToTopBtn />
+    <Footer locale={locale} />
+    <script is:inline src="/js/flowbite.min.js"></script>
+    <script src="../scripts/contactform.ts"></script>
+    <script src="../scripts/script.ts"></script>
+    <script src="../scripts/cookieConsent.ts"></script>
+    <script src="../scripts/placeholder-islands.ts"></script>
+    <input type="hidden" id="pageSlug" value={slug} />
+    <input type="hidden" id="pageType" value={pageType} />
+    <input type="hidden" id="langSwitchDE" value={langSwitch.find((l) => l.locale === "de")?.slug ?? ""} />
+    <input type="hidden" id="langSwitchEN" value={langSwitch.find((l) => l.locale === "en")?.slug ?? ""} />
+    <input type="hidden" id="locale" value={locale} />
+
+    <!-- Add this right after the body tag -->
+    <div id="imageViewerModal" class="fixed inset-0 hidden items-center justify-center bg-black/80 backdrop-blur-sm z-[1000] p-4">
+      <button id="closeImageViewer" class="fixed top-4 right-4 text-white hover:text-gray-300 text-4xl w-12 h-12 flex items-center justify-center"
+        >&times;</button
+      >
+      <div class="relative max-w-7xl w-full">
+        <img id="modalImage" src="" alt="" class="w-full h-auto max-h-[90vh] object-contain" />
+      </div>
+    </div>
+  </body>
+  <!-- Add this before the closing body tag -->
+  <script src="../scripts/imageViewer.ts"></script>
+</html>

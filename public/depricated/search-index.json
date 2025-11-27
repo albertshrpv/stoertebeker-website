@@ -1,0 +1,243 @@
+[
+  {
+    "origin": "Startseite",
+    "title": "Startseite",
+    "content": [],
+    "slug": "/"
+  },
+  {
+    "origin": "Startseite",
+    "componentName": "TitleText",
+    "title": "Warum ist Ihr Anliegen \nbei uns in guten Händen?",
+    "content": [
+      "Die Kanzlei Geiersberger Glas & Partner mbB Rechtsanwälte, mit Standorten in der\nHanse- und Universitätsstadt Rostock und in der Landeshauptstadt Schwerin,\ngehört zu den größten Anwaltsbüros Mecklenburg-Vorpommerns.  \nWir sichern Ihnen hochkompetente Betreuung zu und begleiten Sie auch in\nkomplexen und sehr anspruchsvollen Projekten. Mit unseren spezialisierten\nRechtsanwältinnen und Rechtsanwälten und unserem engagierten Mitarbeiter-Team\nerarbeiten wir Lösungen und Strategien für Sie."
+    ],
+    "slug": "/#sr-7ce0b813"
+  },
+  {
+    "origin": "Startseite",
+    "componentName": "TitleText",
+    "title": "Wir beraten und vertreten \nSie bundesweit.",
+    "content": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus.\nSuspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed,\ndolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper\ncongue, euismod non, mi.\n\nProin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum\ndiam nisl sit amet erat."
+    ],
+    "slug": "/#sr-1f364a7a"
+  },
+  {
+    "origin": "Startseite",
+    "componentName": "AccordionSection",
+    "title": "Häufig gestellte Fragen zu unserer Kanzlei",
+    "content": [
+      "Welche Rechtsgebiete deckt unsere Kanzlei ab?",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At\nvero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,\nno sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit\namet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\nlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam\net justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata\nsanctus est Lorem ipsum dolor sit amet.",
+      "Bietet die Kanzlei Schulungen oder Vorträge an?",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At\nvero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,\nno sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit\namet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\nlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam\net justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata\nsanctus est Lorem ipsum dolor sit amet.",
+      "Welche Sprachen werden in der Kanzlei gesprochen?",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At\nvero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,\nno sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit\namet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\nlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam\net justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata\nsanctus est Lorem ipsum dolor sit amet.",
+      "Wie kann ich mich über aktuelle Entwicklungen informieren?",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At\nvero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,\nno sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit\namet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut\nlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam\net justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata\nsanctus est Lorem ipsum dolor sit amet."
+    ],
+    "slug": "/#sr-9cbe703"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Kompetenzen",
+    "content": [],
+    "slug": "kompetenzen"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Team",
+    "content": [],
+    "slug": "team"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Neuigkeiten",
+    "content": [],
+    "slug": "neuigkeiten"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Karriere",
+    "content": [],
+    "slug": "karriere"
+  },
+  {
+    "origin": "Contentseite",
+    "componentName": "IconFeatureSection",
+    "content": [
+      "Anspruchsvolle Mandate",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna.",
+      "Kollegiales Arbeitsumfeld",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna.",
+      "Persönliche Entwicklung",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna.",
+      "Eigenverantwortliches Arbeiten",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna.",
+      "Attraktiver Standort",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna.",
+      "Langfristige Perspektiven",
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna."
+    ],
+    "slug": "karriere#sr-39dc6452"
+  },
+  {
+    "origin": "Contentseite",
+    "componentName": "BasicContentSection",
+    "title": "Ausbildung von Referandaren",
+    "content": [
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At\nvero eos et accusam et justo duo dolores et ea rebum.\n\nStet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit\namet. voluptua. "
+    ],
+    "slug": "karriere#sr-5c6d8f00",
+    "thumbnail": "/uploads/e802219c79533e55a13b86ccf4422bc518709e2d_183f837965.jpg"
+  },
+  {
+    "origin": "Contentseite",
+    "componentName": "BasicContentSection",
+    "title": "Ausbildung von Azubis",
+    "content": [
+      "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod\ntempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At\nvero eos et accusam et justo duo dolores et ea rebum.\n\nStet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit\namet. voluptua. "
+    ],
+    "slug": "karriere#sr-5c6d8f01",
+    "thumbnail": "/uploads/pexels_cottonbro_4101143_69cfc1893a.jpg"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Service",
+    "content": [],
+    "slug": "service"
+  },
+  {
+    "origin": "Contentseite",
+    "componentName": "DownloadSection",
+    "title": "Mandatsaufnahme",
+    "content": [
+      "",
+      "Mandatsaufnahme Allgemein",
+      "Mandatsaufnahmebogen in Verkehrsunfallsachen"
+    ],
+    "slug": "service#sr-294c0f83"
+  },
+  {
+    "origin": "Contentseite",
+    "componentName": "DownloadSection",
+    "title": "Vollmachten",
+    "content": [
+      "",
+      "Vollmacht für die außergerichtliche Vertretung",
+      "Vollmacht für die gerichtliche Vertretung",
+      "Vollmacht Arbeitsrecht",
+      "Vollmacht in Ehe- und Familiensachen",
+      "Vollmacht Ordnungswidrigkeiten und Strafsachen"
+    ],
+    "slug": "service#sr-294c0f84"
+  },
+  {
+    "origin": "Contentseite",
+    "componentName": "DownloadSection",
+    "title": "Datenschutz",
+    "content": [
+      "",
+      "Datenschutzhinweis"
+    ],
+    "slug": "service#sr-294c0f85"
+  },
+  {
+    "origin": "Contentseite",
+    "componentName": "AccordionSection",
+    "title": "Häufig gestellte Fragen\nzu unserer Kanzlei",
+    "content": [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    ],
+    "slug": "service#sr-9cbe705"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Kontakt",
+    "content": [],
+    "slug": "kontakt"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Impressum",
+    "content": [],
+    "slug": "impressum"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Datenschutz",
+    "content": [],
+    "slug": "datenschutz"
+  },
+  {
+    "origin": "Startseite",
+    "title": "Homepage",
+    "content": [],
+    "slug": "/"
+  },
+  {
+    "origin": "Startseite",
+    "componentName": "TitleText",
+    "title": "Homepage EN",
+    "content": [
+      ""
+    ],
+    "slug": "/#sr-7ce0b812"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Career",
+    "content": [],
+    "slug": "career"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Competencies",
+    "content": [],
+    "slug": "competencies"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "News",
+    "content": [],
+    "slug": "news"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Our Team",
+    "content": [],
+    "slug": "team"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Service",
+    "content": [],
+    "slug": "service"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Contact",
+    "content": [],
+    "slug": "contact"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Privacy Policy",
+    "content": [],
+    "slug": "privacy-policy"
+  },
+  {
+    "origin": "Contentseite",
+    "title": "Site Notice",
+    "content": [],
+    "slug": "site-notice"
+  }
+]

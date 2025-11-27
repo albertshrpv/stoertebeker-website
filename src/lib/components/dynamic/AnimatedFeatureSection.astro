@@ -1,0 +1,69 @@
+---
+import type { Block } from "../../interfaces/page";
+import { Markup } from "react-render-markup";
+import AnimatedFeatureSectionCarousel from "./sub/AnimatedFeatureSectionCarousel";
+import { placeholderUrl } from "../../utils";
+import ActionButton from "../buttons/ActionButton";
+
+interface Props {
+  data: Block;
+  padding: string;
+  locale: string;
+}
+
+const { data, padding, locale } = Astro.props;
+const { title, secondary, blocks, id, __component } = data;
+const isDev = import.meta.env.DEV;
+
+const placeHolderImg = blocks[0].image?.url ?? placeholderUrl;
+const placehlderImgAlt = blocks[0].image?.alternativeText ?? "Placeholder";
+const textPadding = "px-6 md:px-16 xl:px-20 2xl:px-32 py-12 md:py-16 xl:py-20 2xl:py-32";
+---
+
+<section id={data.componentSettings?.anchorId} class={``}>
+  <div class={`w-full text-start bg-primary-500 ${data.componentSettings?.classes}`}>
+    <div class="flex flex-col gap-6">
+      {
+        title && (
+          <div class="markup">
+            <Markup markup={title} />
+          </div>
+        )
+      }
+      <AnimatedFeatureSectionCarousel client:only="react" blocks={blocks} id={id} locale={locale} />
+      <div placeholder-id={`animated-feature-section-${id}`} class="flex flex-col lg:flex-row items-start">
+        {/* Images on the left */}
+        <div class="hidden lg:block w-1/2 relative">
+          <div class="w-full relative overflow-hidden">
+            {/* Base image (previous active) */}
+            <img
+              src={"https://backend.stoertebeker.de" + placeHolderImg + "?format=webp&w=800&embed"}
+              alt={placehlderImgAlt}
+              class="absolute inset-0 object-cover w-full h-full z-10"
+            />
+          </div>
+        </div>
+        {/* Text on the right */}
+        <div
+          class={`w-full text-white lg:w-1/2 flex flex-col justify-center gap-8 lg:gap-12 text-center lg:text-left text-4xl xl:text-5xl 2xl:text-[68px] ${textPadding}`}
+        >
+          {
+            blocks.map((block: any, index: number) => (
+              <a
+                href={block.link ?? null}
+                class={`cursor-pointer transition-all duration-300 ease-in-out ${
+                  index === 0 ? "text-primary blur-none" : "lg:blur-[3px] lg:opacity-60"
+                }`}
+              >
+                {block.text}
+              </a>
+            ))
+          }
+          <div class="lg:flex mt-6">
+            <ActionButton text="Alle Fachgebiete" link="/fachgebiete" secondary={true} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,158 @@
+---
+import { PageType, type Page } from "../../lib/interfaces/page.ts";
+import fetchApi from "../../../lib/strapi.ts";
+import { buildComponent, isDynamicComponent } from "../../lib/components_builder.tsx";
+import Layout, { type LangSwitch } from "../../layouts/Layout.astro";
+import DynamicComponentWrapper from "../../lib/dynamic_component_wrapper.astro";
+import SearchIndex from "../../lib/search_index_builder";
+import type { NavigationItem } from "../../lib/interfaces/navigation";
+import { componentContentPadding } from "../../lib/utils";
+import { Markup } from "react-render-markup";
+import ActionButton from "../../lib/components/buttons/ActionButton";
+
+export async function getStaticPaths() {
+  let endpoint = "pages?populate=*&filters[slug][$ne]=index&locale=en";
+
+  const isDev = import.meta.env.DEV;
+
+  if (!isDev) {
+    endpoint = endpoint + "&filters[published][$eq]=true";
+  }
+
+  // const pages = await fetchApi<Page[]>({
+  //   endpoint: endpoint, // the content type to fetch
+  //   wrappedByKey: "data", // the key to unwrap the response
+  // });
+
+  const pages: Page[] = [];
+
+
+  return pages.map((page) => ({
+    params: {
+      slug: page?.topPage && page.topPage?.data ? `${page.topPage.data.slug}/${page.slug}` : page.slug,
+    },
+  }));
+}
+
+const { slug } = Astro.params;
+
+const page = (
+  await fetchApi<Page[]>({
+    endpoint:
+      "pages?populate[0]=blocks&populate[1]=blocks.blocks&populate[2]=blocks.image&populate[3]=blocks.blocks.image&populate[4]=blocks.blocks.blocks&populate[5]=blocks.blocks2&populate[6]=blocks.blocks.blocks2&populate[7]=topPage&filters[slug][$ne]=index&populate[10]=blocks.componentSettings&populate[11]=blocks.blocks2&populate[12]=blocks.blocks3&populate[13]=blocks.blocks4&populate[14]=blocks.blocks2.image&populate[15]=blocks.blocks3.image&populate[16]=blocks.blocks4.image&populate[17]=image&populate[20]=localizations&populate[21]=topPage.localizations&populate[22]=cta&locale=en&populate[30]=blocks.cta&populate[31]=blocks.blocks.cta&filters[slug][$eq]=" +
+      slug.split("/")[slug.split("/").length - 1], // the content type to fetch
+    wrappedByKey: "data", // the key to unwrap the response
+  })
+)[0];
+
+let langSwitch: LangSwitch[] = [];
+
+const localizations = page.localizations;
+
+if (localizations && localizations.length > 0) {
+  const germanPage = localizations.find((loc) => loc.locale === "de");
+  if (germanPage) {
+    if (page.topPage) {
+      const topPageLocalizations = page.topPage.localizations;
+      if (topPageLocalizations && topPageLocalizations.length > 0) {
+        const germanTopPage = topPageLocalizations.find((loc: any) => loc.locale === "de");
+        if (germanTopPage) {
+          langSwitch.push({
+            locale: "de",
+            slug: `${germanTopPage.slug}/${germanPage.slug}`,
+          });
+        }
+      }
+    } else {
+      langSwitch.push({
+        locale: "de",
+        slug: germanPage.slug,
+      });
+    }
+  }
+}
+
+let allEndpoints = await fetchApi<NavigationItem[]>({
+  endpoint: `navigation/render/emuscuqxslwl9whi40k90rgv?locale=en`, // the content type to fetch
+});
+
+const thisPage = allEndpoints.find((item) => item.path === slug);
+const parentPage = allEndpoints.find((item) => item.id === thisPage?.parent?.id);
+
+if (import.meta.env.PROD) {
+  // add search index of this page
+  SearchIndex.addFromPage(page, "Contentseite", page?.topPage && page.topPage?.data ? `${page.topPage.data.slug}/${page.slug}` : page.slug);
+  SearchIndex.saveToFile();
+}
+
+const metatitle = page.metatitle ? page.metatitle : page.title;
+const metadescription = page.metadescription ? page.metadescription : "";
+---
+
+<Layout title={metatitle} description={metadescription} slug={slug} pageType={PageType.page} locale="en" langSwitch={langSwitch}>
+  <section>
+    <div class={`flex flex-col lg:flex-row max-w-[2000px] mx-auto w-full ${componentContentPadding}`}>
+      <div class={`flex flex-col w-full lg:w-1/2 pb-8 lg:pb-0 lg:pr-24 gap-12`}>
+        <div class="hidden md:flex gap-2 2xl:gap-3 items-center">
+          <div class="flex gap-2 2xl:gap-3 items-center">
+            <a href="/en/" class="text-neutral-900">Home</a>
+
+            <svg class="h-[10px] w-[10px]" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L5.87364 5.70537C6.04212 5.86809 6.04212 6.13191 5.87364 6.29462L1 11" stroke="black" stroke-linecap="round"></path>
+            </svg>
+
+            {
+              parentPage && (
+                <>
+                  <a class="text-neutral-900">{parentPage?.title}</a>
+
+                  <svg class="h-[10px] w-[10px]" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5.87364 5.70537C6.04212 5.86809 6.04212 6.13191 5.87364 6.29462L1 11" stroke="black" stroke-linecap="round" />
+                  </svg>
+                </>
+              )
+            }
+            <a class="text-primary-500">{thisPage?.title ?? page.title}</a>
+          </div>
+        </div>
+
+        <div class="markup">
+          <Markup markup={`<h1>${page.title}</h1>`} />
+        </div>
+      </div>
+      <div class={`w-full lg:w-1/2`}>
+        <div>
+          <div class="markup">
+            <Markup markup={page.pageText} />
+          </div>
+          {
+            page.cta && (
+              <div class="flex flex-col md:flex-row gap-4 mt-8">
+                <ActionButton text={page.cta.text} link={page.cta.link} external={page.cta.external} />
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  {
+    page.image && (
+      <section>
+        <div class={`page-hero h-[40vh] lg:h-[47vh] xl:h-[70vh] 2xl:h-[66vh] flex justify-start items-center`}>
+          <div
+            style={{
+              backgroundImage: `url(${import.meta.env.STRAPI_URL + page.image.url + "?format=webp&embed"})`,
+            }}
+            class={`backgroundImage`}
+          />
+        </div>
+      </section>
+    )
+  }
+  {
+    page.blocks.map((b) =>
+      isDynamicComponent(b) ? <DynamicComponentWrapper block={b} locale="en" /> : <Fragment set:html={buildComponent(b)} key={b.documentId} />
+    )
+  }
+</Layout>

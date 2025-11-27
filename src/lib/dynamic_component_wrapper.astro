@@ -1,0 +1,61 @@
+---
+import { DynamicComponentMap, DynamicComponentType } from "./components_builder";
+import { type Block } from "./interfaces/page";
+import EmbeddedContent from "./components/dynamic/EmbeddedContent.astro";
+import { componentContentPadding, evaluateContentPadding } from "./utils";
+import ImageCarouselWrapper from "./components/dynamic/ImageCarouselWrapper.astro";
+import VisibleCarousel from "./components/content/VisibleCarousel";
+import { createComponentHash } from "./utils/hash";
+import Map from "./components/content/Map";
+import MultiContentBannerWrapper from "./components/dynamic/MultiContentBannerWrapper.astro";
+import ComplexAccordionWrapper from "./components/dynamic/ComplexAccordionWrapper.astro";
+import FullScreenCarouselWrapper from "./components/dynamic/FullScreenCarouselWrapper.astro";
+import AnimatedFeatureSection from "./components/dynamic/AnimatedFeatureSection.astro";
+import HeroSectionWrapper from "./components/hero/HeroSectionWrapper.astro";
+
+interface Props {
+  block: Block;
+  locale: string;
+}
+
+const { block, locale } = Astro.props;
+
+const componentType: DynamicComponentType | undefined = DynamicComponentMap[block.componentName];
+if (componentType == undefined || block.componentSettings?.active === false) {
+  return;
+}
+let padding = componentContentPadding;
+if (block.componentSettings) {
+  padding = evaluateContentPadding(block.componentSettings.paddingTop, block.componentSettings.paddingBottom);
+}
+
+const componentHash = createComponentHash(block.componentName, block.id);
+---
+
+<div id={componentHash}>
+  {
+    async () => {
+      switch (componentType) {
+        case DynamicComponentMap.EmbeddedContent:
+          return <EmbeddedContent data={block} padding={padding} />;
+        case DynamicComponentMap.ImageCarousel:
+          return <ImageCarouselWrapper data={block as any} />;
+        case DynamicComponentType.VisibleCarousel:
+          return <VisibleCarousel client:only="react" data={block as any} />;
+        case DynamicComponentType.OSMMap:
+          return <Map client:only="react" data={block as any} padding={padding} />;
+        case DynamicComponentType.ComplexAccordion:
+          return <ComplexAccordionWrapper data={block as any} padding={padding} />;
+        case DynamicComponentType.MultiContentBanner:
+          return <MultiContentBannerWrapper data={block as any} />;
+        case DynamicComponentType.FullScreenCarousel:
+          return <FullScreenCarouselWrapper data={block as any} />;
+        case DynamicComponentType.AnimatedFeatureSection:
+          return <AnimatedFeatureSection data={block as any} padding={padding} locale={locale} />;
+        case DynamicComponentType.HeroSection:
+          return <HeroSectionWrapper data={block as any} locale={locale} />;
+        default:
+      }
+    }
+  }
+</div>

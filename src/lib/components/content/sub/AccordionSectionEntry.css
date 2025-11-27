@@ -1,0 +1,24 @@
+@tailwind utilities;
+
+/* Chrome-specific styles with interpolate-size support */
+@supports (interpolate-size: allow-keywords) {
+    .accordion-body {
+        interpolate-size: allow-keywords;
+    }
+}
+
+/* Default max-height for non-supporting browsers */
+.group[aria-expanded="true"] .accordion-body {
+    max-height: 1500px;
+}
+
+/* Override for browsers supporting interpolate-size */
+@supports (interpolate-size: allow-keywords) {
+    .group[aria-expanded="true"] .accordion-body {
+        max-height: fit-content;
+    }
+}
+
+.accordion-body {
+    display: block !important;
+}

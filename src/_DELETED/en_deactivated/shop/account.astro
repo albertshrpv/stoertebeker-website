@@ -1,0 +1,22 @@
+---
+import TicketShopLayout from "../../../layouts/TicketShopLayout.astro";
+import { PageType } from "../../../lib/interfaces/page";
+import App from "../../../components/ticketshop/App";
+
+const metatitle = "My Account - Störtebeker Festival";
+const metadescription = "Manage your tickets and personal information";
+---
+
+<TicketShopLayout
+    title={metatitle}
+    description={metadescription}
+    slug=""
+    pageType={PageType.tickets}
+    locale="en"
+    langSwitch={[{ locale: "de", slug: "tickets/konto" }]}
+    footerType="ticketshop"
+>
+    <App client:only="react" />
+</TicketShopLayout>
+
+

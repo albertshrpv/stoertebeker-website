@@ -1,0 +1,89 @@
+---
+import { Markup } from "react-render-markup";
+import TicketShopLayout from "../../layouts/TicketShopLayout.astro";
+import { PageType } from "../../lib/interfaces/page";
+import Footer from "../../components/ticketshop/components/Footer";
+import NavContact from "../../components/base/NavContact.astro";
+import TitleText from "../../components/ticketshop/components/TitleText";
+import CornerBorderedContainer from "../../components/ticketshop/components/CornerBorderedContainer";
+import TitleTextBasic from "../../components/ticketshop/components/TitleTextBasic";
+
+const metatitle = "Barrierefreiheitserklärung - Störtebeker Festspiele";
+const metadescription = "Hier finden Sie die Barrierefreiheitserklärung für den Ticketshop der Störtebeker Festspiele";
+
+let componentContentPadding = "px-6 md:px-16 xl:px-20 pb-6 md:pb-16 xl:pb-20";
+
+
+---
+
+<TicketShopLayout
+    title={metatitle}
+    description={metadescription}
+    slug="kontakt"
+    pageType={PageType.tickets}
+    locale="de"
+    langSwitch={[{ locale: "en", slug: "tickets" }]}
+	footerType="base"
+>
+    <!-- <NavContact locale="de" /> -->
+    <section class={`bigHeaderBackgroundContainer`}>
+        <img src="/images/contact.jpg" alt="Kontakt" class="w-full h-full object-cover" />
+    </section>
+    <section class={`max-w-screen-2xl mx-auto w-full ${componentContentPadding}`}>
+            <div class='w-full'>
+                
+                <div class='markup'>
+                <h1 class="mt-12 mb-12 lg:mt-24">Barrierefreiheitserklärung</h1>
+                </div>
+            </div>
+            <div class="w-full mt-8">
+                <div class='markup'>
+                <h2>1. Geltungsbereich</h2>
+<p>Diese Erklärung zur digitalen Barrierefreiheit gilt für den Ticketshop der Störtebeker Festspiele unter der Domain 
+<a href="https://booking.stoertebeker.de">https://booking.stoertebeker.de</a>.</p>
+
+<h2>2. Stand der Vereinbarkeit mit den Anforderungen</h2>
+<p>Dieser Ticketshop ist weitgehend mit den Anforderungen der Barrierefreie-Informationstechnik-Verordnung (BITV 2.0) in Verbindung mit der EU-Richtlinie 2016/2102 vereinbar.</p>
+<p>Die Website orientiert sich an den Web Content Accessibility Guidelines (WCAG) 2.2, Konformitätsstufe AA, sowie an den Best Practices des W3C.</p>
+
+<h2>3. Technische Prüfung der Barrierefreiheit</h2>
+<p>Die technische Überprüfung erfolgte mit <strong>axe-core 4.10.3</strong>. Geprüft wurden alle automatisiert testbaren Kriterien der WCAG 2.2 AA + Best Practice. Bei der letzten Überprüfung wurden keine Fehler festgestellt.</p>
+<p>Zusätzlich wurde eine manuelle Prüfung der Tastaturnavigation durchgeführt. Alle wesentlichen Funktionen des Ticketshops sind mit der Tastatur bedienbar.</p>
+
+<h2>4. Barrierefreie Sitzplatzwahl: Bestplatzwahl</h2>
+<p>Der Ticketshop enthält eine interaktive grafische Sitzplatzwahl, die visuell und mit Maus- oder Touch-Eingabe bedienbar ist.</p>
+<p>Da eine vollständige barrierefreie Bedienung dieser Ansicht über Tastatur oder Screenreader technisch nur eingeschränkt möglich ist, wurde eine alternative barrierefreie <strong>Bestplatzwahl</strong> implementiert.</p>
+<p>Über die Bestplatzwahl kann die gewünschte Platzgruppe ausgewählt werden. Das System wählt anschließend automatisch die besten verfügbaren Plätze (ausgehend von der Mitte der gewählten Platzgruppe) aus. Damit ist eine vollständige Ticketbuchung ohne Nutzung des Sitzplans möglich.</p>
+
+<h2>5. Maßnahmen zur Verbesserung der Barrierefreiheit</h2>
+<p>Wir sind bestrebt, den Ticketshop kontinuierlich weiter zu verbessern und regelmäßig zu prüfen, ob neue technische Möglichkeiten zur weiteren Verbesserung der Barrierefreiheit zur Verfügung stehen.</p>
+
+<h2>6. Erstellung dieser Erklärung</h2>
+<p>Diese Erklärung wurde am <strong>12. November 2025</strong> erstellt. Die Bewertung erfolgte durch interne Selbstbewertung auf Grundlage der WCAG-Prüfungen mit axe-core 4.10.3 und manuellen Funktionsprüfungen.</p>
+
+<h2>7. Rückmeldung und Kontakt</h2>
+<p>Wenn Ihnen Mängel in Bezug auf die barrierefreie Gestaltung unseres Ticketshops auffallen oder Sie Informationen zu nicht barrierefreien Inhalten benötigen, kontaktieren Sie uns bitte:</p>
+<p><strong>Störtebeker Festspiele GmbH &amp; Co. KG</strong><br>
+Am Bodden 1<br>
+18528 Ralswiek, Deutschland<br>
+<a href="mailto:info@stoertebeker.de">info@stoertebeker.de</a><br>
++49 (0)3838 – 31100</p>
+
+<h2>8. Durchsetzungsverfahren</h2>
+<p>Wenn Sie innerhalb von sechs Wochen keine zufriedenstellende Antwort auf Ihre Anfrage zur Barrierefreiheit erhalten, können Sie sich an die Durchsetzungsstelle für digitale Barrierefreiheit des Landes Mecklenburg-Vorpommern wenden:</p>
+<p><strong>Landesbeauftragter für digitale Barrierefreiheit M-V</strong><br>
+c/o Ministerium für Inneres, Bau und Digitalisierung<br>
+Alexandrinenstraße 1<br>
+19055 Schwerin<br>
+<a href="mailto:durchsetzungsstelle@mi.mv-regierung.de">durchsetzungsstelle@mi.mv-regierung.de</a><br>
++49 (0)385 – 588 1181</p>   </div>
+                
+            </div>
+        </section>
+
+   
+ 
+
+ 
+    <div class="h-12"></div>
+</TicketShopLayout>
