@@ -26,8 +26,17 @@ export default {
 			}
 		},
 		fontFamily: {
+			'jakarta': [
+				'Plus Jakarta Sans',
+				'ui-sans-serif',
+				'system-ui',
+				'-apple-system',
+				'system-ui',
+				'Segoe UI',
+				'Roboto',
+			],
 			'title': [
-				'TT Hoves Pro',
+				'SF Zwei',
 				'ui-sans-serif',
 				'system-ui',
 				'-apple-system',
@@ -40,7 +49,7 @@ export default {
 				'sans-serif',
 			],
 			'body': [
-				'TT Hoves Pro',
+				'SF Zwei',
 				'ui-sans-serif',
 				'system-ui',
 				'-apple-system',
@@ -57,7 +66,7 @@ export default {
 				'Noto Color Emoji'
 			],
 			'sans': [
-				'TT Hoves Pro',
+				'SF Zwei',
 				'ui-sans-serif',
 				'system-ui',
 				'-apple-system',

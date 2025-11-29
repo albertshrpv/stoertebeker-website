@@ -5,6 +5,7 @@ import DynamicComponentWrapper from "../../lib/dynamic_component_wrapper.astro";
 import SearchIndex from "../../lib/search_index_builder";
 import Layout from "../../layouts/Layout.astro";
 import fetchApi from "../../../lib/strapi";
+import MainVideoHero from "../../lib/components/hero/MainVideoHero.tsx";
 
 const page = (
     await fetchApi<Page[]>({
@@ -25,6 +26,7 @@ if (import.meta.env.PROD) {
 ---
 
 <Layout title={metatitle} description={metadescription} slug="index" pageType={PageType.page} locale="de" langSwitch={[]}>
+    <MainVideoHero />
     {
         page.blocks.map((b) =>
             isDynamicComponent(b) ? <DynamicComponentWrapper block={b} locale="de" /> : <Fragment set:html={buildComponent(b)} key={b.documentId} />,

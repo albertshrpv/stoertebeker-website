@@ -27,7 +27,7 @@ body {
 
 
 
-/* TT Hoves Pro Fonts */
+/* Fonts */
 @font-face {
   font-family: 'Work Sans';
   font-style: normal;
@@ -54,6 +54,40 @@ body {
     800;
   font-display: block;
   src: url(/fonts/work-sans-latin-wght-italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800;
+  font-display: block;
+  src: url(/fonts/plus-jakarta-sans-latin-wght-normal.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: italic;
+  font-weight: 200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800;
+  font-display: block;
+  src: url(/fonts/plus-jakarta-sans-latin-wght-italic.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'SF Zwei';
+  font-display: block;
+  src: url(/fonts/sf-zwei.woff2) format('woff2');
 }
 
 
