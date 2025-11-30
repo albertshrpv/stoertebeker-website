@@ -12,6 +12,8 @@ import ComplexAccordionWrapper from "./components/dynamic/ComplexAccordionWrappe
 import FullScreenCarouselWrapper from "./components/dynamic/FullScreenCarouselWrapper.astro";
 import AnimatedFeatureSection from "./components/dynamic/AnimatedFeatureSection.astro";
 import HeroSectionWrapper from "./components/hero/HeroSectionWrapper.astro";
+import ScrollingBannerWrapper from "./components/dynamic/ScrollingBannerWrapper.astro";
+import AnimatedStatSectionWrapper from "./components/dynamic/AnimatedStatSectionWrapper.astro";
 
 interface Props {
   block: Block;
@@ -54,6 +56,10 @@ const componentHash = createComponentHash(block.componentName, block.id);
           return <AnimatedFeatureSection data={block as any} padding={padding} locale={locale} />;
         case DynamicComponentType.HeroSection:
           return <HeroSectionWrapper data={block as any} locale={locale} />;
+        case DynamicComponentType.ScrollingBanner:
+          return <ScrollingBannerWrapper data={block as any} />;
+        case DynamicComponentType.AnimatedStatSection:
+          return <AnimatedStatSectionWrapper data={block as any} padding={padding} />;
         default:
       }
     }

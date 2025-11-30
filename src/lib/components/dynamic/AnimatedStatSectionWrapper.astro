@@ -1,0 +1,17 @@
+---
+import type { Block } from "../../interfaces/page";
+import AnimatedStatSection from "./sub/AnimatedStatSection";
+
+interface Props {
+  data: Block;
+  padding: string;
+}
+
+const { data, padding } = Astro.props;
+const { componentSettings } = data as any;
+---
+
+<div id={componentSettings?.anchorId}>
+  <AnimatedStatSection client:only="react" data={data as any} padding={padding} />
+</div>
+

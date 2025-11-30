@@ -22,7 +22,7 @@ const TicketButton: React.FC<TicketButtonProps> = ({
     const r = 4.63; // Radius for corners
     const k = r * 0.55228; // Bezier handle offset
 
-    const leftWidth = Math.max(128, text.length * 9 + 50);
+    const leftWidth = Math.max(128, text.length * 11 + 50);
     const totalWidth = leftWidth + rightWidth;
 
     const textColor = style === "primary" ? "#19263D" : "white";
@@ -144,7 +144,7 @@ const TicketButton: React.FC<TicketButtonProps> = ({
 
             {/* Left Content (Link) */}
             <div
-                className={`flex justify-center items-center z-10 text-base px-2 h-[48px] absolute top-[5px] left-[4px] ${textClassName}`}
+                className={`flex justify-center items-center z-10 text-base lg:text-lg xl:text-xl px-2 h-[48px] absolute top-[5px] left-[4px] whitespace-nowrap ${textClassName}`}
                 style={{
                     color: textColor,
                     width: leftWidth

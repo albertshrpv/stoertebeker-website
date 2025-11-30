@@ -25,8 +25,6 @@ body {
 }
 
 
-
-
 /* Fonts */
 @font-face {
   font-family: 'Work Sans';
@@ -111,6 +109,34 @@ body {
   cursor: url("/images/Maus3.svg"), auto !important;
 }
 
+
+/* MARKUP STYLES */
+
+.markup h1,
+.markup h2,
+.markup h3 {
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  font-family: "SF Zwei", sans-serif;
+  @apply text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+}
+
+
+.markup p {
+  @apply text-base md:text-lg lg:text-xl xl:text-2xl;
+}
+
+.markup-smaller {
+  @apply text-sm md:text-base lg:text-lg xl:text-xl;
+}
+
+.override-text-white h1,
+.override-text-white h2,
+.override-text-white h3,
+.override-text-white p {
+  color: white !important;
+}
+
 .markup a {
   @apply text-primary-500 underline;
 }
@@ -135,9 +161,13 @@ body {
   padding-top: 20px;
 }
 
-.markup h2, .markup h3{
+.markup h2,
+.markup h3 {
   margin-top: 20px;
 }
+
+/* MARKUP STYLES END */
+
 
 /* CKEditor */
 .ck-editor__editable {
@@ -268,139 +298,6 @@ input[type=number] {
   }
 }
 
-/* Nav Styles */
-
-.highlight-nav {
-  position: relative;
-  display: inline-block;
-  z-index: 1;
-}
-
-.highlight-nav::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 1rem;
-  width: 104%;
-  translate: -2%;
-  height: 0.5em;
-  background-color: #e7ff8e;
-  z-index: -1;
-}
-
-.highlight-text {
-  @apply bg-primary-500/40;
-  border-radius: 0.25rem;
-}
-
-
-/* MARKUP STYLES */
-
-.markup h1,
-.markup h2,
-.markup h3 {
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-.markup h1 {
-  font-size: 24px;
-}
-
-.markup h2 {
-  font-size: 22px;
-}
-
-.markup h3 {
-  font-size: 20px;
-}
-
-.markup p {
-  font-size: 14px;
-  line-height: 1.4rem;
-  /* @apply text-neutral-900; */
-}
-
-
-.markup-smaller {
-  font-size: 12px;
-}
-
-.override-text-white h1,
-.override-text-white h2,
-.override-text-white h3,
-.override-text-white p {
-  color: white !important;
-}
-
-.background-highlight {
-  display: inline;
-  background-color: #f5f5f5;
-  padding: 4px 8px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  /* line-height: 2.6rem; */
-}
-
-.background-highlight-primary-500 {
-  display: inline;
-  @apply bg-primary-500;
-  padding: 4px 8px;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  /* line-height: 2.6rem; */
-}
-
-.title-highlight {
-  @apply text-primary-500 text-2xl;
-}
-
-@media (min-width: 640px) {
-  .markup h1 {
-    font-size: 28px;
-  }
-
-  .markup h2 {
-    font-size: 24px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .markup h1 {
-    font-size: 32px;
-  }
-
-  .markup h2 {
-    font-size: 28px;
-  }
-
-  .markup p {
-    font-size: 16px;
-    line-height: 2rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  .markup h1 {
-    font-size: 38px;
-  }
-
-  .markup h2 {
-    font-size: 34px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .markup h1 {
-    font-size: 42px;
-  }
-
-  .markup h2 {
-    font-size: 38px;
-  }
-}
-
-/* MARKUP STYLES END */
 
 .feature-entry a {
   color: black;
@@ -486,8 +383,10 @@ input[type=number] {
 }
 
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;    /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .maplibregl-ctrl-attrib-inner {
@@ -756,7 +655,8 @@ input[type="file"] {
   border-radius: 9999px;
   background: linear-gradient(to right, #19263D var(--percent, 0%), #f3f4f6 var(--percent, 0%));
   outline: none;
-  accent-color: #19263D; /* enforce darkBlue on browsers using accent-color */
+  accent-color: #19263D;
+  /* enforce darkBlue on browsers using accent-color */
 }
 
 .voucher-range:focus {
@@ -776,29 +676,34 @@ input[type="file"] {
   width: 18px;
   height: 18px;
   border-radius: 9999px;
-  background: #19263D !important; /* darkBlue */
+  background: #19263D !important;
+  /* darkBlue */
   border: 2px solid #19263D !important;
-  margin-top: -7px; /* center the thumb on a 4px track */
+  margin-top: -7px;
+  /* center the thumb on a 4px track */
 }
 
 /* Firefox */
 .voucher-range::-moz-range-track {
   height: 4px;
   border-radius: 9999px;
-  background: #f3f4f6; /* gray-100 */
+  background: #f3f4f6;
+  /* gray-100 */
 }
 
 .voucher-range::-moz-range-progress {
   height: 4px;
   border-radius: 9999px;
-  background: #19263D; /* darkBlue */
+  background: #19263D;
+  /* darkBlue */
 }
 
 .voucher-range::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 9999px;
-  background: #19263D !important; /* darkBlue */
+  background: #19263D !important;
+  /* darkBlue */
   border: 2px solid #19263D !important;
 }
 
@@ -974,4 +879,24 @@ select::-ms-expand {
 /* SVG Styles */
 .st0 {
   isolation: isolate;
+}
+
+
+.concave-corners {
+  mask-image:
+    radial-gradient(circle 20px at 0 0, transparent 20px, black 21px),
+    radial-gradient(circle 20px at 100% 0, transparent 20px, black 21px),
+    radial-gradient(circle 20px at 0 100%, transparent 20px, black 21px),
+    radial-gradient(circle 20px at 100% 100%, transparent 20px, black 21px);
+  mask-position: top left, top right, bottom left, bottom right;
+  mask-size: 51% 51%;
+  mask-repeat: no-repeat;
+  -webkit-mask-image:
+    radial-gradient(circle 20px at 0 0, transparent 20px, black 21px),
+    radial-gradient(circle 20px at 100% 0, transparent 20px, black 21px),
+    radial-gradient(circle 20px at 0 100%, transparent 20px, black 21px),
+    radial-gradient(circle 20px at 100% 100%, transparent 20px, black 21px);
+  -webkit-mask-position: top left, top right, bottom left, bottom right;
+  -webkit-mask-size: 51% 51%;
+  -webkit-mask-repeat: no-repeat;
 }

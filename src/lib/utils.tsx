@@ -1,4 +1,4 @@
-const componentContentPadding = "py-12 md:py-16 xl:py-20 px-6 md:px-16 xl:px-20";
+const componentContentPadding = "py-24 md:py-28 xl:py-40 px-6 md:px-16 xl:px-20";
 const componentContentPaddingX = "px-6 md:px-16 xl:px-20";
 
 const placeholderUrl = "uploads/pelargoniums_for_europe_a_H_Fl_P2q_Krxc_unsplash_70d161cfb5.jpg";
@@ -13,13 +13,13 @@ const evaluateContentPadding = (paddingTop: string, paddingBottom: string, addHo
     if (addTopPadding) {
         switch (paddingTop) {
             case 'weniger':
-                paddingTopClasses = 'pt-12 md:pt-12 xl:pt-16';
+                paddingTopClasses = 'pt-16 md:pt-16 xl:pt-20';
                 break;
             case 'normal':
-                paddingTopClasses = 'pt-14 md:pt-16 xl:pt-28';
+                paddingTopClasses = 'pt-24 md:pt-28 xl:pt-40';
                 break;
             case 'mehr':
-                paddingTopClasses = 'pt-16 md:pt-20 xl:pt-44';
+                paddingTopClasses = 'pt-24 md:pt-32 xl:pt-56';
                 break;
             default:
                 break;
@@ -28,13 +28,13 @@ const evaluateContentPadding = (paddingTop: string, paddingBottom: string, addHo
     if (addBotPadding) {
         switch (paddingBottom) {
             case 'weniger':
-                paddingBottomClasses = 'pb-12 md:pb-12 xl:pb-16 ';
+                paddingBottomClasses = 'pb-16 md:pb-16 xl:pb-20 ';
                 break;
             case 'normal':
-                paddingBottomClasses = 'pb-14 md:pb-16 xl:pb-28 ';
+                paddingBottomClasses = 'pb-24 md:pb-28 xl:pb-40 ';
                 break;
             case 'mehr':
-                paddingBottomClasses = 'pb-16 md:pb-20 xl:pb-44 ';
+                paddingBottomClasses = 'pb-24 md:pb-32 xl:pb-56 ';
                 break;
             default:
                 break;

@@ -1,0 +1,41 @@
+---
+import type { Block } from "../../interfaces/page";
+import ScrollingBanner from "./sub/ScrollingBanner";
+
+interface Props {
+  data: Block;
+}
+
+const { data } = Astro.props;
+const { text, componentSettings, id } = data as any;
+
+// We can render a static version with just enough items to fill a typical screen width.
+// Or just a few items to show "something is here".
+// Since it's an infinite scroll, just showing a few static copies is fine.
+const staticCopies = [1, 2, 3, 4, 5, 6]; 
+---
+
+<div id={componentSettings?.anchorId} class="overflow-x-clip">
+  <ScrollingBanner client:only="react" data={data as any} padding="" />
+
+  <section 
+    class={`w-full h-28 overflow-hidden flex items-center bg-white ${componentSettings?.classes || ''}`}
+    placeholder-id={`scrolling-banner-${id}`}
+  >
+    <div class="flex items-center">
+      {staticCopies.map(() => (
+        <div class="flex items-center gap-12 flex-shrink-0 pr-12">
+          <div class="text-black whitespace-nowrap text-3xl font-medium">
+            {text}
+          </div>
+          <svg width="61" height="28" viewBox="0 0 61 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M49.8897 23.5488L59.8008 13.7988L49.7102 13.8246C53.3685 13.8151 55.206 18.2388 52.6177 20.824L49.8897 23.5488Z" fill="#19263D" />
+            <path d="M59.8008 13.7988L53.1934 7.29883L49.8897 4.04883L52.6124 6.74674C55.2341 9.34459 53.4011 13.8151 49.7102 13.8246L59.8008 13.7988Z" fill="#19263D" />
+            <path d="M0.800781 13.8246L49.7102 13.8246M59.8008 13.7988L53.1934 7.29883L49.8897 4.04883M59.8008 13.7988L49.8897 23.5488M59.8008 13.7988L49.7102 13.8246M46.586 0.798828L49.8897 4.04883M46.586 26.7988L49.8897 23.5488M49.8897 4.04883L52.6124 6.74674C55.2341 9.34459 53.4011 13.8151 49.7102 13.8246M49.8897 23.5488L52.6177 20.824C55.206 18.2388 53.3685 13.8151 49.7102 13.8246" stroke="#19263D" stroke-width="1.59781" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+      ))}
+    </div>
+  </section>
+</div>
+

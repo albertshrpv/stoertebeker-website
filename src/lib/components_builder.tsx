@@ -16,6 +16,7 @@ import BigButtonSection from "./components/content/BigButtonSection";
 import SimpleFeatureSection from "./components/content/SimpleFeatureSection";
 import ImageSection from "./components/content/ImageSection";
 import BigImageBanner from "./components/content/BigImageBanner";
+import BigImageVideo from "./components/content/BigImageVideo";
 import FeatureListSection from "./components/content/FeatureListSection";
 import MultiFeatureList from "./components/content/MultiFeatureList";
 import { createComponentHash } from './utils/hash';
@@ -31,6 +32,7 @@ import ContentBanner from "./components/content/ContentBanner";
 import StatSection from "./components/content/StatSection";
 import CTABanner from "./components/content/CTABanner";
 import ContactCard from "./components/content/ContactCard";
+import PartnerSection from "./components/content/PartnerSection";
 /*
 
     Map defining available Components in this project by mapping the strapi ComponentName field to the respective FlowBite Component.
@@ -66,6 +68,8 @@ enum ComponentType {
   StatSection,
   CTABanner,
   ContactCard,
+  BigImageVideo,
+  PartnerSection,
 }
 
 enum DynamicComponentType {
@@ -77,6 +81,8 @@ enum DynamicComponentType {
   MultiContentBanner,
   AnimatedFeatureSection,
   HeroSection,
+  ScrollingBanner,
+  AnimatedStatSection,
 }
 
 
@@ -110,6 +116,8 @@ const ComponentMap: Record<string, ComponentType> = {
   "StatSection": ComponentType.StatSection,
   "CTABanner": ComponentType.CTABanner,
   "ContactCard": ComponentType.ContactCard,
+  "BigImageVideo": ComponentType.BigImageVideo,
+  "PartnerSection": ComponentType.PartnerSection,
 };
 
 
@@ -123,6 +131,8 @@ const DynamicComponentMap: Record<string, DynamicComponentType> = {
   "MultiContentBanner": DynamicComponentType.MultiContentBanner,
   "AnimatedFeatureSection": DynamicComponentType.AnimatedFeatureSection,
   "HeroSection": DynamicComponentType.HeroSection,
+  "ScrollingBanner": DynamicComponentType.ScrollingBanner,
+  "AnimatedStatSection": DynamicComponentType.AnimatedStatSection,
 };
 
 
@@ -428,7 +438,26 @@ const buildComponent = (block: Block, returnHtml = true) => {
       );
       break;
     }
-
+    case ComponentType.BigImageVideo: {
+      const { id } = block;
+      const data: any = block;
+      jsxElement = (
+        <div id={componentHash}>
+          <BigImageVideo data={data} key={id} padding={padding} />
+        </div>
+      );
+      break;
+    }
+    case ComponentType.PartnerSection: {
+      const { id } = block;
+      const data: any = block;
+      jsxElement = (
+        <div id={componentHash}>
+          <PartnerSection data={data} key={id} padding={padding} />
+        </div>
+      );
+      break;
+    }
 
     default:
       return;
